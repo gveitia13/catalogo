@@ -1,102 +1,102 @@
 const ul_sidebar = document.querySelector('#ul-sidebar')
 let printProducts = async (d, productos, side = true, categorias = categorias) =>
     categorias.forEach(e => {
-    console.log('printProduct')
-    if (side) {
-      //Modificando el sidebar
-      let li = d.createElement('li')
-      li.classList.add('nav-item')
-      let a = d.createElement('a')
-      a.rel = 'cate'
-      a.style.cursor = 'pointer'
-      a.classList.add('nav-link', 'cate')
-      let i = d.createElement('i')
-      i.classList.add('nav-icon', 'text-white', 'tema')
-      e.icon.forEach(icon => i.classList.add(icon))
-      let p = d.createElement('p')
-      p.innerText = e.name
-      a.appendChild(i)
-      a.appendChild(p)
-      li.appendChild(a)
-      ul_sidebar.appendChild(li)
+      console.log('printProduct')
+      if (side) {
+        //Modificando el sidebar
+        let li = d.createElement('li')
+        li.classList.add('nav-item')
+        let a = d.createElement('a')
+        a.rel = 'cate'
+        a.style.cursor = 'pointer'
+        a.classList.add('nav-link', 'cate')
+        let i = d.createElement('i')
+        i.classList.add('nav-icon', 'text-white', 'tema')
+        e.icon.forEach(icon => i.classList.add(icon))
+        let p = d.createElement('p')
+        p.innerText = e.name
+        a.appendChild(i)
+        a.appendChild(p)
+        li.appendChild(a)
+        ul_sidebar.appendChild(li)
 
-      //Modificando el footer modo movil
-      let ul_footer = d.querySelector('#ul_footer'),
-        fli = d.createElement('li'),
-        fa = d.createElement('a'),
-        fi = d.createElement('i'),
-        fsmall = d.createElement('small'),
-        fspan = d.createElement('span')
-      fli.classList.add('d-inline-block')
-      fa.classList.add('btn', 'pl-1', 'pr-1', 'border-0', 'pb-0', 'pt-0', 'w-h', 'text-nowrap')
-      fa.rel = 'fcate'
-      e.icon.forEach(icon => fi.classList.add(icon))
-      fi.classList.add('d-block', 'mdi-24px', 'tema')
-      fsmall.style.color = '#c2c7d0'
-      fsmall.innerText = e.name.length > 9 ? e.name.slice(0, 9) + '...' : e.name
-      fspan.classList.add('d-none')
-      fspan.innerText = e.name
-      ul_footer.appendChild(fli)
-      fli.appendChild(fa)
-      fa.appendChild(fi)
-      fa.appendChild(fsmall)
-      fa.appendChild(fspan)
+        //Modificando el footer modo movil
+        let ul_footer = d.querySelector('#ul_footer'),
+          fli = d.createElement('li'),
+          fa = d.createElement('a'),
+          fi = d.createElement('i'),
+          fsmall = d.createElement('small'),
+          fspan = d.createElement('span')
+        fli.classList.add('d-inline-block')
+        fa.classList.add('btn', 'pl-1', 'pr-1', 'border-0', 'pb-0', 'pt-0', 'w-h', 'text-nowrap')
+        fa.rel = 'fcate'
+        e.icon.forEach(icon => fi.classList.add(icon))
+        fi.classList.add('d-block', 'mdi-24px', 'tema')
+        fsmall.style.color = '#c2c7d0'
+        fsmall.innerText = e.name.length > 9 ? e.name.slice(0, 9) + '...' : e.name
+        fspan.classList.add('d-none')
+        fspan.innerText = e.name
+        ul_footer.appendChild(fli)
+        fli.appendChild(fa)
+        fa.appendChild(fi)
+        fa.appendChild(fsmall)
+        fa.appendChild(fspan)
 
-      a.addEventListener('click', () => {
-        document.querySelector('#container').style.display = 'none'
-        d.querySelectorAll('a[rel="cate"]').forEach(e => e.classList.remove('active'))
-        a.classList.add('active')
-        d.querySelectorAll('a[rel="fcate"]').forEach(e => e.classList.remove('bg-gradient-dark'))
-        d.querySelectorAll('a[rel="fcate"]').forEach(e => {
-          if (e.children[e.children.length - 1].innerText === p.innerText)
-            e.classList.add('bg-gradient-dark')
+        a.addEventListener('click', () => {
+          document.querySelector('#container').style.display = 'none'
+          d.querySelectorAll('a[rel="cate"]').forEach(e => e.classList.remove('active'))
+          a.classList.add('active')
+          d.querySelectorAll('a[rel="fcate"]').forEach(e => e.classList.remove('bg-gradient-dark'))
+          d.querySelectorAll('a[rel="fcate"]').forEach(e => {
+            if (e.children[e.children.length - 1].innerText === p.innerText)
+              e.classList.add('bg-gradient-dark')
+          })
+          d.querySelector('a[rel="todos"]').classList.remove('active')
+          d.querySelector('a[rel="ftodos"]').classList.remove('bg-gradient-dark')
+          let categoria = categorias.filter(g => g.name === p.innerText)
+          d.querySelector('#container').innerHTML = ''
+          printProducts(d, productos, false, categoria)
+          document.getElementById('container').style.display = 'block'
         })
-        d.querySelector('a[rel="todos"]').classList.remove('active')
-        d.querySelector('a[rel="ftodos"]').classList.remove('bg-gradient-dark')
-        let categoria = categorias.filter(g => g.name === p.innerText)
-        d.querySelector('#container').innerHTML = ''
-        printProducts(d, productos, false, categoria)
-        document.getElementById('container').style.display = 'block'
-      })
 
-      fa.addEventListener('click', () => {
-        document.querySelector('#container').style.display = 'none'
-        d.querySelectorAll('a[rel="fcate"]').forEach(e => e.classList.remove('bg-gradient-dark'))
-        fa.classList.add('bg-gradient-dark')
-        d.querySelectorAll('a[rel="cate"]').forEach(e => e.classList.remove('active'))
-        d.querySelectorAll('a[rel="cate"]').forEach(e => {
-          if (e.children[e.children.length - 1].innerText === fspan.innerText)
-            e.classList.add('active')
+        fa.addEventListener('click', () => {
+          document.querySelector('#container').style.display = 'none'
+          d.querySelectorAll('a[rel="fcate"]').forEach(e => e.classList.remove('bg-gradient-dark'))
+          fa.classList.add('bg-gradient-dark')
+          d.querySelectorAll('a[rel="cate"]').forEach(e => e.classList.remove('active'))
+          d.querySelectorAll('a[rel="cate"]').forEach(e => {
+            if (e.children[e.children.length - 1].innerText === fspan.innerText)
+              e.classList.add('active')
+          })
+          d.querySelector('a[rel="ftodos"]').classList.remove('bg-gradient-dark')
+          d.querySelector('a[rel="todos"]').classList.remove('active')
+          let categoria = categorias.find(g => g.name === fspan.innerText)
+          d.querySelector('#container').innerHTML = ''
+          printProducts(d, productos, false, [categoria])
+          document.getElementById('container').style.display = 'block'
         })
-        d.querySelector('a[rel="ftodos"]').classList.remove('bg-gradient-dark')
-        d.querySelector('a[rel="todos"]').classList.remove('active')
-        let categoria = categorias.find(g => g.name === fspan.innerText)
-        d.querySelector('#container').innerHTML = ''
-        printProducts(d, productos, false, [categoria])
-        document.getElementById('container').style.display = 'block'
+      }
+      //Creando cards con el body
+      let pro = productos.filter(f => {if (f.category.name === e.name) return f})
+      if (!pro.length) return
+
+      pro.sort((a, b) => a.pioridad - b.pioridad)
+      let cate = d.createElement('h4')
+      cate.classList.add('my-4', 'cate')
+      cate.innerText = e.name
+      let container = d.querySelector('#container')
+      container.appendChild(cate)
+      let div1 = d.createElement('div')
+      div1.classList.add('card-deck-wrapper')
+      let div2 = d.createElement('div')
+      div2.classList.add('card-deck', 'text-black-50')
+      div1.appendChild(div2)
+      container.appendChild(div1)
+
+      pro.forEach(g => {
+        div2.innerHTML += g.card()
       })
-    }
-    //Creando cards con el body
-    let pro = productos.filter(f => {if (f.category.name === e.name) return f})
-    if (!pro.length) return
-
-    pro.sort((a, b) => a.pioridad - b.pioridad)
-    let cate = d.createElement('h4')
-    cate.classList.add('my-4', 'cate')
-    cate.innerText = e.name
-    let container = d.querySelector('#container')
-    container.appendChild(cate)
-    let div1 = d.createElement('div')
-    div1.classList.add('card-deck-wrapper')
-    let div2 = d.createElement('div')
-    div2.classList.add('card-deck', 'text-black-50')
-    div1.appendChild(div2)
-    container.appendChild(div1)
-
-    pro.forEach(g => {
-      div2.innerHTML += g.card()
-    })
-  }),
+    }),
   temaDefault = d => {
     console.log('temaDefault')
     let div = d.createElement('div')

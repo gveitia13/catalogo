@@ -1,3 +1,7 @@
+a[rel="cate"], a[rel="fcate"] {
+    user-select: none;
+}
+
 html {
     background-color: #6c757d !important;
 }
@@ -181,15 +185,6 @@ h4.my-4:first-child {
     background-color: #0d131c;
     color: #ffffff !important;
 }
-
-/*.prod-card {*/
-/*    vertical-align: middle !important;*/
-/*}*/
-
-/*#container {*/
-/*    display: flex !important;*/
-/*    flex-wrap: wrap !important;*/
-/*}*/
 
 .w3-hover-shadow-light:hover {
     box-shadow: 0 4px 10px 0 rgba(240, 240, 240, 0.2), 0 4px 20px 0 rgba(240, 240, 240, 0.19)

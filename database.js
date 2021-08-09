@@ -62,7 +62,7 @@ productos.push(new Product('Cargador', categorias[0], '', 1,
   'Alcatel', 'static/prod-img/cargador.jpg', 0, 200))
 
 productos.push(new Product('Cable HDMI', categorias[1], '', 1,
-  '', 'static/prod-img/HDMi.jpg', 0, 200))
+  '', 'static/prod-img/HDMI.jpg', 0, 200))
 
 productos.push(new Product('Manillas AppleWatch', categorias[0], '42/44 MM', 1,
   '', 'static/prod-img/Awatch.jpg', 0, 525))
