@@ -40,11 +40,12 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
       fa.appendChild(fsmall)
       fa.appendChild(fspan)
 
-      a.addEventListener('click', ev => {
+      a.addEventListener('click', () => {
+        document.querySelector('#container').style.display = 'none'
         d.querySelectorAll('a[rel="cate"]').forEach(e => e.classList.remove('active'))
         a.classList.add('active')
         d.querySelectorAll('a[rel="fcate"]').forEach(e => e.classList.remove('bg-gradient-dark'))
-        Array.from(d.querySelectorAll('a[rel="fcate"]')).forEach(e => {
+        d.querySelectorAll('a[rel="fcate"]').forEach(e => {
           if (e.children[e.children.length - 1].innerText === p.innerText)
             e.classList.add('bg-gradient-dark')
         })
@@ -53,9 +54,11 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
         let categoria = categorias.filter(g => g.name === p.innerText)
         d.querySelector('#container').innerHTML = ''
         printProducts(d, productos, false, categoria)
+        document.getElementById('container').style.display = 'block'
       })
 
       fa.addEventListener('click', () => {
+        document.querySelector('#container').style.display = 'none'
         d.querySelectorAll('a[rel="fcate"]').forEach(e => e.classList.remove('bg-gradient-dark'))
         fa.classList.add('bg-gradient-dark')
         d.querySelectorAll('a[rel="cate"]').forEach(e => e.classList.remove('active'))
@@ -68,6 +71,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
         let categoria = categorias.find(g => g.name === fspan.innerText)
         d.querySelector('#container').innerHTML = ''
         printProducts(d, productos, false, [categoria])
+        document.getElementById('container').style.display = 'block'
       })
     }
     //Creando cards con el body
@@ -87,7 +91,9 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     div1.appendChild(div2)
     container.appendChild(div1)
 
-    pro.forEach(g => div2.innerHTML += g.card())
+    pro.forEach(g => {
+      div2.innerHTML += g.card()
+    })
   }),
   temaDefault = d => {
     let div = d.createElement('div')
@@ -117,7 +123,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     d.querySelector('a.brand-link').classList.remove('navbar-navy', 'navbar-primary')
     d.querySelectorAll('footer.main-footer').forEach(e => e.classList.remove('bg-navy', 'bg-primary'))
     d.querySelector('div.content-wrapper').classList.remove('bg-black-2', 'bg-gray-light')
-    d.querySelectorAll('div.prod-card').forEach(e => e.classList.remove('bg-navy'))
+    d.querySelectorAll('div.prod-card').forEach(e => e.classList.remove('bg-navy', 'w3-hover-shadow-light', 'w3-hover-shadow'))
     d.querySelector('div.modal-header').classList.remove('bg-navy', 'bg-primary')
     if (text === 'Modo claro') {
       d.querySelector('aside.main-sidebar').classList.add('sidebar-light-primary')
@@ -126,6 +132,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
       d.querySelector('footer.ffooter').classList.add('bg-primary')
       d.querySelector('div.content-wrapper').classList.add('bg-gray-light')
       d.querySelector('div.modal-header').classList.add('bg-primary')
+      d.querySelectorAll('div.prod-card').forEach(e => e.classList.add('w3-hover-shadow'))
     } else {
       d.querySelector('aside.main-sidebar').classList.add('sidebar-dark-navy')
       d.querySelectorAll('i.tema').forEach(e => e.classList.add('text-white'))
@@ -134,13 +141,13 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
       d.querySelector('footer.main-footer').classList.add('bg-navy',)
       d.querySelector('footer.ffooter').classList.add('bg-navy',)
       d.querySelector('div.content-wrapper').classList.add('bg-black-2')
-      d.querySelectorAll('div.prod-card').forEach(e => e.classList.add('bg-navy'))
       d.querySelector('div.modal-header').classList.add('bg-navy')
+      d.querySelectorAll('div.prod-card').forEach(e => e.classList.add('bg-navy', 'w3-hover-shadow-light'))
     }
   }
 ;
 
-((d, ajax) => {
+((d) => {
 
   window.addEventListener('load', () =>
     temaDefault(d), printProducts(d, productos, true, categorias),
@@ -150,7 +157,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
 
   $('.close').on('click', () => $('.modal').modal('hide'))
 
-  //Imprimiendo en tiempo real
+  //Buscando en tiempo real
   d.querySelector('form input').addEventListener('input', function () {
 
     let catActual = Array.from(document.querySelectorAll('a[rel="cate"]')).find(e =>
@@ -183,7 +190,6 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
   window.addEventListener('load', () => {
     d.querySelector('a[rel="tema"]').addEventListener('click', function () {
       localStorage.setItem('tema', this.children[this.children.length - 1].innerText)
-      console.log(this.children[0])
       this.children[0].classList.remove('mdi-weather-night', 'mdi-weather-sunny', 'text-white', 'text-black-50')
       let icon = localStorage.getItem('tema') ===
       'Modo oscuro' ? ['mdi-weather-sunny',] : ['mdi-weather-night', 'text-white']
@@ -200,20 +206,24 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
 
   //Evento click en Ver todos plp
   d.querySelector('a[rel="todos"]').addEventListener('click', () => {
+    document.querySelector('#container').style.display = 'none'
     d.querySelectorAll('a[rel="cate"]').forEach(e => e.classList.remove('active'))
     d.querySelectorAll('a[rel="fcate"]').forEach(e => e.classList.remove('bg-gradient-dark'))
     d.querySelector('a[rel="todos"]').classList.add('active')
     d.querySelector('a[rel="ftodos"]').classList.add('bg-gradient-dark')
     d.querySelector('#container').innerHTML = ''
     printProducts(d, productos, false, categorias)
+    setTimeout(() => document.getElementById('container').style.display = 'block')
   })
   d.querySelector('a[rel="ftodos"]').addEventListener('click', () => {
+    document.querySelector('#container').style.display = 'none'
     d.querySelectorAll('a[rel="fcate"]').forEach(e => e.classList.remove('bg-gradient-dark'))
     d.querySelectorAll('a[rel="cate"]').forEach(e => e.classList.remove('active'))
     d.querySelector('a[rel="ftodos"]').classList.add('bg-gradient-dark')
     d.querySelector('a[rel="todos"]').classList.add('active')
     d.querySelector('#container').innerHTML = ''
     printProducts(d, productos, false, categorias)
+    setTimeout(() => document.getElementById('container').style.display = 'block')
   })
 
   d.querySelector('a[rel="servicios"]').addEventListener('click', () => {
@@ -223,4 +233,4 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
 
   //Imprimiendo filro de busqueda en el loby con formulario
   d.forms[0].addEventListener('submit', ev => ev.preventDefault())
-})(document, new XMLHttpRequest())
+})(document)

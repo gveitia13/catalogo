@@ -6,6 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Catálogo</title>
     <link rel="icon" href="static/img/ios7-star-half.png" type="image/x-icon">
+    <link rel="stylesheet" href="w3-school/css/w3pro.min.css">
     <!--     Font Awesome Icons-->
     <link rel="stylesheet" href="material-icons/css/icons.min.css">
     <!--     Theme style -->
@@ -102,11 +103,13 @@
     <!-- Content -->
 
     <div class="content-wrapper">
-            <div class="content">
-                <div class="container-fluid" id="container">
+        <div class="content">
+            <div class="w3-row-padding">
+                <div class="container-fluid w3-animate-zoom" id="container">
                     <!-- Se hace con JS -->
                 </div>
             </div>
+        </div>
     </div>
 
     <!-- Main Footer -->
@@ -224,28 +227,6 @@
 <script src="database.js"></script>
 <script src="static/js/script.js"></script>
 <script>
-  let ajaxFunction = function (url, parameters, callback) {
-    $.ajax({
-      url: url,
-      type: 'GET',
-      // data: parameters,
-      dataType: 'json',
-      processData: false,
-      contentType: false
-    }).done(function (data) {
-      console.log(data)
-      if (!data.hasOwnProperty('error')) {
-        callback(data)
-        return false
-      } else
-        message_error(data.error)
-    }).fail(function (jqXHR, textStatus, errorThrown) {
-      alert(textStatus + ': ' + errorThrown)
-    }).always(function (data) {
-
-    })
-  }
-  // ajaxFunction('https://catalogostar.epizy.com', '', () => {})
 </script>
 </body>
 </html>
