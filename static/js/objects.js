@@ -68,7 +68,7 @@ class Product {
     return `
 <div class="col-md-3 col-sm-4 col-12 p-1 d-md-inline-block d-sm-inline-block div-card">
     <span class="d-none">${this._name}</span>
-    <div class="card m-1 prod-card ml-2 mr-2 ${tema} ${hover}">
+    <div class="card m-1 prod-card ml-2 mr-2 ${tema} ${hover} card-zoom">
              ${ribbon}
             <div class="card-img-top div-img" style='background: url("${this._img}")'></div>
             <div class="card-body">

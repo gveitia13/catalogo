@@ -194,3 +194,13 @@ h4.my-4:first-child {
 .w3-hover-shadow-light:hover {
     box-shadow: 0 4px 10px 0 rgba(240, 240, 240, 0.2), 0 4px 20px 0 rgba(240, 240, 240, 0.19)
 }
+
+/*inflando*/
+
+.card-zoom {
+    transition: transform .5s;
+}
+
+.card-zoom:hover {
+    transform: scale(1.03);
+}
