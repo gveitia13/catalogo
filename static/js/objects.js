@@ -62,12 +62,13 @@ class Product {
           <small><i class="mdi mdi-star"></i>Destacado<i class="mdi mdi-star"></i></small>
       </div>
     </div>` : '',
-      tema = localStorage.getItem('tema') === 'Modo claro' ? 'bg-navy' : 'bg-light'
+      tema = localStorage.getItem('tema') === 'Modo claro' ? 'bg-navy' : 'bg-light',
+      hover = localStorage.getItem('tema') === 'Modo claro' ? 'w3-hover-shadow-light' : 'w3-hover-shadow'
 
     return `
 <div class="col-md-3 col-sm-4 col-12 p-1 d-md-inline-block d-sm-inline-block div-card">
     <span class="d-none">${this._name}</span>
-    <div class="card m-1 prod-card ml-2 mr-2 ${tema} w3-hover-shadow-light">
+    <div class="card m-1 prod-card ml-2 mr-2 ${tema} ${hover}">
              ${ribbon}
             <div class="card-img-top div-img" style='background: url("${this._img}")'></div>
             <div class="card-body">

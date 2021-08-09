@@ -1,5 +1,7 @@
 const ul_sidebar = document.querySelector('#ul-sidebar')
-let printProducts = async (d, productos, side = true, categorias = categorias) => categorias.forEach(e => {
+let printProducts = async (d, productos, side = true, categorias = categorias) =>
+    categorias.forEach(e => {
+    console.log('printProduct')
     if (side) {
       //Modificando el sidebar
       let li = d.createElement('li')
@@ -96,6 +98,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     })
   }),
   temaDefault = d => {
+    console.log('temaDefault')
     let div = d.createElement('div')
     div.classList.add('mt-3', 'mb-3')
     div.style.borderTop = '1px solid #4f5962'
@@ -115,6 +118,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     Array.from(a.children).find(e => e.tagName === 'P').innerHTML = 'Modo oscuro'
   },
   cambiarTema = (d, icon, text) => {
+    console.log('cambiarTema')
     icon.forEach(e => d.querySelector('a[rel="tema"]').children[0].classList.add(e))
     d.querySelector('a[rel="tema"]').children[1].innerText = text
     d.querySelector('aside.main-sidebar').classList.remove('sidebar-dark-navy', 'sidebar-light-primary')
@@ -123,7 +127,8 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     d.querySelector('a.brand-link').classList.remove('navbar-navy', 'navbar-primary')
     d.querySelectorAll('footer.main-footer').forEach(e => e.classList.remove('bg-navy', 'bg-primary'))
     d.querySelector('div.content-wrapper').classList.remove('bg-black-2', 'bg-gray-light')
-    d.querySelectorAll('div.prod-card').forEach(e => e.classList.remove('bg-navy', 'w3-hover-shadow-light', 'w3-hover-shadow'))
+    d.querySelectorAll('div.prod-card').forEach(e =>
+      e.classList.remove('bg-navy', 'w3-hover-shadow-light', 'w3-hover-shadow'))
     d.querySelector('div.modal-header').classList.remove('bg-navy', 'bg-primary')
     if (text === 'Modo claro') {
       d.querySelector('aside.main-sidebar').classList.add('sidebar-light-primary')
@@ -148,7 +153,6 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
 ;
 
 ((d) => {
-
   window.addEventListener('load', () =>
     temaDefault(d), printProducts(d, productos, true, categorias),
   )
