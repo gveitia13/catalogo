@@ -1,0 +1,192 @@
+html {
+    background-color: #6c757d !important;
+}
+
+body {
+    background-color: #6c757d !important;
+}
+
+.mdi-15px.mdi-set, .mdi-15px.mdi:before {
+    font-size: 15px;
+}
+
+*::-webkit-scrollbar {
+    width: 9px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #001f3f, #6c757d);
+    border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #000, #001f3f);
+}
+
+.text-decoration-underline {
+    text-decoration: underline !important;
+}
+
+.table > thead > tr > th {
+    border-bottom: solid 1px #000 !important;
+}
+
+.modal-dialog.modal-dialog-top {
+    margin-top: 0 !important
+}
+
+
+.modal.fade .modal-dialog {
+    transition-duration: .12s
+}
+
+.modal.fade .modal-dialog.modal-dialog-popin {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
+}
+
+.modal.fade .modal-dialog.modal-dialog-popout {
+    -webkit-transform: scale(.9);
+    transform: scale(.9)
+}
+
+.modal.fade .modal-dialog.modal-dialog-slideup {
+    -webkit-transform: translate(0, 10%);
+    transform: translate(0, 10%)
+}
+
+.modal.fade .modal-dialog.modal-dialog-slideright {
+    -webkit-transform: translate(-10%, 0);
+    transform: translate(-10%, 0)
+}
+
+.modal.fade .modal-dialog.modal-dialog-slideleft {
+    -webkit-transform: translate(10%, 0);
+    transform: translate(10%, 0)
+}
+
+.modal.fade .modal-dialog.modal-dialog-fromright {
+    -webkit-transform: translateX(25%) rotate(10deg) scale(.9);
+    transform: translateX(25%) rotate(10deg) scale(.9)
+}
+
+.modal.fade .modal-dialog.modal-dialog-fromleft {
+    -webkit-transform: translateX(-25%) rotate(-10deg) scale(.9);
+    transform: translateX(-25%) rotate(-10deg) scale(.9)
+}
+
+.modal.show .modal-dialog.modal-dialog-popin, .modal.show .modal-dialog.modal-dialog-popout {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+}
+
+.modal.show .modal-dialog.modal-dialog-slideleft, .modal.show .modal-dialog.modal-dialog-slideright, .modal.show .modal-dialog.modal-dialog-slideup {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0)
+}
+
+.modal.show .modal-dialog.modal-dialog-fromleft, .modal.show .modal-dialog.modal-dialog-fromright {
+    -webkit-transform: translateX(0) rotate(0) scale(1);
+    transform: translateX(0) rotate(0) scale(1)
+}
+
+.max-width-70px {
+    max-width: 70px !important;
+}
+
+.bg-invento {
+    background-color: #333333 !important;
+}
+
+/*de aki pa abajo ta x gusto*/
+
+.div-img {
+    width: 100%;
+    display: block;
+    height: 165px;
+    background-size: cover !important;
+    border-radius: .25rem .25rem 0 0;
+    border-top: 5px solid transparent;
+}
+
+.div-img-profile {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background: url("../img/profile.jpg");
+    background-size: cover !important;
+}
+
+.div-img, .div-img-profile {
+    background-position: center !important;
+    position: relative;
+    background-repeat: no-repeat !important;
+}
+
+@media only screen and (max-width: 767px) {
+    .div-img {
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .div-img {
+        height: 250px;
+    }
+}
+
+.stretch-card {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    /*-webkit-justify-content: stretch;*/
+    justify-content: stretch;
+}
+
+.w3-opacity, .w3-hover-opacity:hover {
+    opacity: 0.60
+}
+
+.main-header {
+    border-bottom: 1px solid #4f5962;
+}
+
+.w-h {
+    width: 73px;
+    height: 60px;
+}
+
+.factive {
+    background-color: #343a40;
+}
+
+.ffooter {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    z-index: 1032;
+}
+
+h4.my-4:first-child {
+    padding-top: 10px;
+}
+
+.bg-black-2 {
+    background-color: #0d131c;
+    color: #ffffff !important;
+}
+
+/*.prod-card {*/
+/*    vertical-align: middle !important;*/
+/*}*/
+
+/*#container {*/
+/*    display: flex !important;*/
+/*    flex-wrap: wrap !important;*/
+/*}*/
