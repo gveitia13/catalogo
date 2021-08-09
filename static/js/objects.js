@@ -66,6 +66,7 @@ class Product {
 
     return `
 <div class="col-md-3 col-sm-4 col-12 p-1 d-md-inline-block d-sm-inline-block div-card">
+    <span class="d-none">${this._name}</span>
     <div class="card m-1 prod-card ml-2 mr-2 ${tema}">
              ${ribbon}
             <div class="card-img-top div-img" style='background: url("${this._img}")'></div>
@@ -100,32 +101,5 @@ class Category {
     this._description = description
     this._icon = icon
   }
-}
-
-let card2 = prod => {
-  let precio = prod.price ? `${prod.price} USD ` : ``,
-    cup = prod.cup ? `${prod.cup} CUP` : ``
-
-  let ribbon = prod.pioridad < 100 ?
-    `<div class="ribbon-wrapper">
-      <div class="ribbon bg-gradient-warning" style="text-transform: none">
-          <small class="">Pioridad</small>
-      </div>
-    </div>` : ''
-
-  return `<div class="col-md-3 col-sm-6 col-12 p-1">
-    <div class="card m-1">
-             ${ribbon}
-             <div class="card-img-top div-img" style='background: url("${prod.img}")'></div>
-            <div class="card-body">
-            <h5 class="card-title"><b>${prod.name}</b> ${prod.model}</h5>
-            <p class="card-text ">Precio: <b>${precio + cup}</b><br>${prod.description}
-            </p>
-            <p class="card-text">
-                <small class="text-muted"></small>
-            </p>
-        </div>
-    </div>
-</div>`
 }
 

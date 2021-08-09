@@ -1,5 +1,5 @@
 const ul_sidebar = document.querySelector('#ul-sidebar')
-let printProducts = (d, productos, side = true, categorias = categorias) => categorias.forEach(e => {
+let printProducts = async (d, productos, side = true, categorias = categorias) => categorias.forEach(e => {
     if (side) {
       //Modificando el sidebar
       let li = d.createElement('li')
@@ -155,25 +155,27 @@ let printProducts = (d, productos, side = true, categorias = categorias) => cate
 
     let catActual = Array.from(document.querySelectorAll('a[rel="cate"]')).find(e =>
       e.classList.value.includes('active'))
-    if (catActual !== undefined) catActual = categorias.filter(e =>
-      e.name === catActual.children[catActual.children.length - 1].innerText)
-    else catActual = categorias
+    catActual = catActual !== undefined ? categorias.filter(e =>
+        e.name === catActual.children[catActual.children.length - 1].innerText)
+      : catActual = categorias
 
     setTimeout(() => {
-      let filro2 = productos.filter(e =>
-        !e.name.toLowerCase().includes(this.value.toLowerCase()) ||
-        !e.model.toLowerCase().includes(this.value.toLowerCase()))
       let filro = productos.filter(e =>
         e.name.toLowerCase().includes(this.value.toLowerCase()) ||
         e.model.toLowerCase().includes(this.value.toLowerCase()))
-/*      let cards = document.querySelectorAll('div.div-card')
 
-        filro2.forEach(e=>{
-          if (e.name ===)
-        })*/
+      d.querySelectorAll('div.div-card span').forEach(f => {
+        if (!f.innerText.toLowerCase().includes(this.value.toLowerCase())) {
+          f.parentElement.classList.remove('d-md-inline-block', 'd-sm-inline-block')
+          f.parentElement.classList.add('d-none')
 
-      d.querySelector('#container').innerHTML = ''
-      printProducts(d, filro, false, catActual)
+        } else {
+          f.parentElement.classList.add('d-md-inline-block', 'd-sm-inline-block')
+          f.parentElement.classList.remove('d-none')
+        }
+      })
+      // d.querySelector('#container').innerHTML = ''
+      // printProducts(d, filro, false, catActual)
     }, 250)
   })
 
