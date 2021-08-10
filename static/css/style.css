@@ -199,3 +199,13 @@ h4.my-4:first-child {
 .card-zoom:hover {
     transform: scale(1.03);
 }
+
+.w3-animate-opacity {
+    animation: opac .7s
+}
+.custom-switch{
+    right: .5rem!important;
+}
+.mdi-weather-night{
+    font-size: 1.2rem!important;
+}

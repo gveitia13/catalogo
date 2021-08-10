@@ -93,12 +93,9 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
       div1.appendChild(div2)
       container.appendChild(div1)
 
-      pro.forEach(g => {
-        div2.innerHTML += g.card()
-      })
+      pro.forEach(g => div2.innerHTML += g.card())
     }),
   temaDefault = d => {
-    console.log('temaDefault')
     let div = d.createElement('div')
     div.classList.add('mt-3', 'mb-3')
     div.style.borderTop = '1px solid #4f5962'
@@ -115,12 +112,35 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     i.classList.add('nav-icon', 'mdi', 'mdi-weather-night', 'text-white', 'tema')
     a.appendChild(i)
     a.appendChild(d.createElement('p'))
+
+    //Pastillas
+    let divSwitch = d.createElement('div'),
+      inputSwitch = d.createElement('input'),
+      labelSwitch = d.createElement('label')
+    divSwitch.classList.add('right',
+      'custom-switch', 'custom-switch-off-navy', 'custom-switch-on-primary','ml-3')
+    inputSwitch.type = 'checkbox'
+    inputSwitch.classList.add('custom-control-input')
+    inputSwitch.id = 'temaSwitch'
+    labelSwitch.classList.add('custom-control-label')
+    labelSwitch.htmlFor = 'temaSwitch'
+    a.appendChild(divSwitch)
+    divSwitch.appendChild(inputSwitch)
+    divSwitch.appendChild(labelSwitch)
     Array.from(a.children).find(e => e.tagName === 'P').innerHTML = 'Modo oscuro'
   },
-  cambiarTema = (d, icon, text) => {
-    console.log('cambiarTema')
+  cambiarTema = (d,) => {
+    d.querySelector('a[rel="tema"]').children[0].classList.remove(
+      'mdi-weather-night', 'mdi-weather-sunny', 'text-white', 'text-black-50')
+
+    let icon = localStorage.getItem('tema') ===
+    'Modo oscuro' ? ['mdi-weather-sunny',] : ['mdi-weather-night', 'text-white']
+    let text = localStorage.getItem('tema') ===
+    'Modo oscuro' ? 'Modo claro' : 'Modo oscuro'
+
     icon.forEach(e => d.querySelector('a[rel="tema"]').children[0].classList.add(e))
     d.querySelector('a[rel="tema"]').children[1].innerText = text
+
     d.querySelector('aside.main-sidebar').classList.remove('sidebar-dark-navy', 'sidebar-light-primary')
     d.querySelector('nav.main-header').classList.remove('navbar-navy', 'navbar-primary')
     d.querySelectorAll('i.tema').forEach(e => e.classList.remove('text-white'))
@@ -149,6 +169,15 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
       d.querySelector('div.modal-header').classList.add('bg-navy')
       d.querySelectorAll('div.prod-card').forEach(e => e.classList.add('bg-navy', 'w3-hover-shadow-light'))
     }
+  },
+  efectoTema = d => {
+    d.querySelector('aside').style.display = 'none'
+    d.querySelector('nav.main-header').style.display = 'none'
+    d.querySelector('.ffooter').style.display = 'none'
+    //algo aki
+    d.querySelector('aside').style.display = 'block'
+    d.querySelector('nav.main-header').style.display = 'flex'
+    d.querySelector('.ffooter').style.display = 'block'
   }
 ;
 
@@ -160,6 +189,9 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     e.addEventListener('click', () => $('#links1').modal('show')))
 
   $('.close').on('click', () => $('.modal').modal('hide'))
+
+  d.querySelector('a[rel="servicios"]').addEventListener('click', () =>
+    console.log('click'))
 
   //Buscando en tiempo real
   d.querySelector('form input').addEventListener('input', function () {
@@ -192,20 +224,21 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
 
   //Configurando el tema de la pagina
   window.addEventListener('load', () => {
-    d.querySelector('a[rel="tema"]').addEventListener('click', function () {
-      localStorage.setItem('tema', this.children[this.children.length - 1].innerText)
-      this.children[0].classList.remove('mdi-weather-night', 'mdi-weather-sunny', 'text-white', 'text-black-50')
-      let icon = localStorage.getItem('tema') ===
-      'Modo oscuro' ? ['mdi-weather-sunny',] : ['mdi-weather-night', 'text-white']
-      let text = localStorage.getItem('tema') ===
-      'Modo oscuro' ? 'Modo claro' : 'Modo oscuro'
-      cambiarTema(d, icon, text)
+    d.querySelector('#temaSwitch').checked = localStorage.getItem('tema') === 'Modo oscuro'
+
+    d.querySelector('#temaSwitch').addEventListener('change', function () {
+      let a = d.querySelector('a[rel="tema"]')
+      localStorage.setItem('tema', a.children[a.children.length - 2].innerText)
+      cambiarTema(d,)
     })
-    cambiarTema(d,
-      localStorage.getItem('tema') ===
-      'Modo oscuro' ? ['mdi-weather-sunny'] : ['mdi-weather-night', 'text-white'],
-      localStorage.getItem('tema') ===
-      'Modo oscuro' ? 'Modo claro' : 'Modo oscuro')
+    d.querySelector('a[rel="tema"]').addEventListener('click', function (e) {
+      e.preventDefault()
+      let a = d.querySelector('a[rel="tema"]')
+      localStorage.setItem('tema', a.children[a.children.length - 2].innerText)
+      $('#temaSwitch').click()
+      cambiarTema(d,)
+    })
+    cambiarTema(d,)
   })
 
   //Evento click en Ver todos plp
@@ -228,11 +261,6 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     d.querySelector('#container').innerHTML = ''
     printProducts(d, productos, false, categorias)
     setTimeout(() => document.getElementById('container').style.display = 'block')
-  })
-
-  d.querySelector('a[rel="servicios"]').addEventListener('click', () => {
-    d.querySelector('.asd').classList.remove('d-md-inline-block', 'd-sm-inline-block')
-    d.querySelector('.asd').classList.add('d-none')
   })
 
   //Imprimiendo filro de busqueda en el loby con formulario

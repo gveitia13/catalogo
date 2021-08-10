@@ -173,14 +173,9 @@ Sidebar
     </div>
 </div>
 
-<script>
-  function myFunction () {
-    var x = document.getElementById('Demo')
-    if (x.className.indexOf('w3-show') == -1) {
-      x.className += ' w3-show'
-    } else {
-      x.className = x.className.replace(' w3-show', '')
-    }
-  }
-</script>
+<input type="checkbox" name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
 
+<div class="custom-control-inline right navbar-toggler-icon custom-switch custom-switch-off-navy custom-switch-on-primary">
+    <input type="checkbox" class="custom-control-input" id="customSwitch3">
+    <label class="custom-control-label" for="customSwitch3"></label>
+</div>

@@ -66,7 +66,7 @@ class Product {
       hover = localStorage.getItem('tema') === 'Modo claro' ? 'w3-hover-shadow-light' : 'w3-hover-shadow'
 
     return `
-<div class="col-md-3 col-sm-4 col-12 p-1 d-md-inline-block d-sm-inline-block div-card">
+<div class="col-12 col-sm-6 col-md-4  col-lg-3 p-1 d-md-inline-block d-sm-inline-block div-card">
     <span class="d-none">${this._name}</span>
     <div class="card m-1 prod-card ml-2 mr-2 ${tema} ${hover} card-zoom">
              ${ribbon}
