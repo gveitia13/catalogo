@@ -1,4 +1,4 @@
-a[rel="cate"], a[rel="fcate"] {
+a[rel="cate"], a[rel="fcate"], a[rel="servicios"], a[rel="tema"], h4, a[rel="todos"] {
     user-select: none;
 }
 
@@ -203,9 +203,11 @@ h4.my-4:first-child {
 .w3-animate-opacity {
     animation: opac .7s
 }
-.custom-switch{
-    right: .5rem!important;
+
+.custom-switch {
+    right: .5rem !important;
 }
-.mdi-weather-night{
-    font-size: 1.2rem!important;
+
+.mdi-weather-night {
+    font-size: 1.2rem !important;
 }
