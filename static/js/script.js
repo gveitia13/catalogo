@@ -1,7 +1,6 @@
 const ul_sidebar = document.querySelector('#ul-sidebar')
 let printProducts = async (d, productos, side = true, categorias = categorias) =>
     categorias.forEach(e => {
-      console.log('printProduct')
       if (side) {
         //Modificando el sidebar
         let li = d.createElement('li')
@@ -77,8 +76,8 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
         })
       }
       //Creando cards con el body
-      let pro = productos.filter(f => {if (f.category.name === e.name) return f})
-      if (!pro.length) return
+      let pro = productos.filter(f => f.category.name === e.name)
+      if (!pro) return
 
       pro.sort((a, b) => a.pioridad - b.pioridad)
       let cate = d.createElement('h4')
@@ -118,7 +117,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
       inputSwitch = d.createElement('input'),
       labelSwitch = d.createElement('label')
     divSwitch.classList.add('right',
-      'custom-switch', 'custom-switch-off-navy', 'custom-switch-on-primary','ml-3')
+      'custom-switch', 'custom-switch-off-navy', 'custom-switch-on-primary', 'ml-3')
     inputSwitch.type = 'checkbox'
     inputSwitch.classList.add('custom-control-input')
     inputSwitch.id = 'temaSwitch'
