@@ -262,7 +262,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
   })
 
   //Intentando hacer zoom de la img card
-  var img = d.querySelectorAll('.div-img')
+/*  var img = d.querySelectorAll('.div-img')
   var modalImg = document.getElementById('img01')
   // modalImg.style.width = '200px'
   // modalImg.style.height = '200px'
@@ -273,7 +273,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     console.log(e.style.background)
     modalImg.src = e.style.background.slice(5, e.style.background.length - 2)
     captionText.innerText = d.querySelector('.card-body h5.card-title').innerText
-  })
+  })*/
 
   //Imprimiendo filro de busqueda en el loby con formulario
   d.forms[0].addEventListener('submit', ev => ev.preventDefault())
