@@ -231,3 +231,6 @@ h4.my-4:first-child {
     width: 180px !important;
 }
 
+a[rel="tema"]:hover {
+
+}
