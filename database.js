@@ -4,20 +4,6 @@ categorias.push(new Category('Celulares & Accesorios', 'uuuuu', ['mdi', 'mdi-cel
 categorias.push(new Category('PCs & Accesorios', 'uuuuu', ['mdi', 'mdi-desktop-classic']))
 categorias.push(new Category('Artículos variados', 'uuuuu', ['mdi', 'mdi-package-variant-closed']))
 
-/*
-for (let i = 0; i < 5; i++)
-  productos.push(new Product('Celular', categorias[0], [400,200], 'Un buen movil', 5, 'sm-g960'))
-for (let i = 0; i < 8; i++)
-  productos.push(new Product('Laptop', categorias[1], [800,100], 'Una buena pc',5, 'hp-pavilon', 'static/img/profile.jpg'))
-
-productos.push(new Product('Pucho', categorias[1], 800, 'Una buena pc', 5, 'puchovil', 'static/img/profile.jpg'))
-
-productos.push(new Product('Evelio', categorias[0], 800, 'Una buena pc', 5, 'aldo', 'static/img/profile.jpg'))
-productos.push(new Product('Evelio', categorias[0], 800, 'Una buena pc', 5, 'aldo', 'static/img/profile.jpg'))
-productos.push(new Product('Este', categorias[0], 800, 'Una buena pc', 5, 'aldo', 'static/img/profile.jpg', 1))
-productos.push(new Product('Este', categorias[0], 800, 'Una buena pc', 5, 'aldo', 'static/img/targeta grafica.jpg', 1, 200))
-*/
-
 //Oficiales
 productos.push(new Product('Cable de red', categorias[1],
   '19 metros, Categoria 6 (Nuevo)',
@@ -88,7 +74,7 @@ productos.push(new Product('Xiaomi Mi Watch Lite', categorias[0],
 productos.push(new Product('Xiaomi Earbuds Basic 2', categorias[0],
   '', 1, '', 'static/prod-img/earbuds.jpg', 0, 2300))
 
-productos.push(new Product('Mause Gaming', categorias[0],
+productos.push(new Product('Mause Gaming', categorias[1],
   'Inalámbrico 6D', 1, '', 'static/prod-img/mouse6D.jpg', 30, 1800))
 
 productos.push(new Product('Speaker Bluetooth', categorias[2],

@@ -114,7 +114,13 @@ body {
     height: 165px;
     background-size: cover !important;
     border-radius: .25rem .25rem 0 0;
+    border-radius: 10px 10px 0 0;
     border-top: 5px solid transparent;
+    cursor: pointer;
+}
+
+.div-img:hover {
+    opacity: .9;
 }
 
 .div-img-profile {
@@ -131,6 +137,13 @@ body {
     background-repeat: no-repeat !important;
 }
 
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     .div-img {
         height: 200px;
@@ -141,15 +154,6 @@ body {
     .div-img {
         height: 250px;
     }
-}
-
-.stretch-card {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: stretch;
-    align-items: stretch;
-    /*-webkit-justify-content: stretch;*/
-    justify-content: stretch;
 }
 
 .w3-opacity, .w3-hover-opacity:hover {
@@ -193,6 +197,8 @@ h4.my-4:first-child {
 /*inflando*/
 
 .card-zoom {
+    border-radius: 10px;
+    transition-timing-function: ease-in;
     transition: transform .5s;
 }
 
@@ -211,3 +217,17 @@ h4.my-4:first-child {
 .mdi-weather-night {
     font-size: 1.2rem !important;
 }
+
+.nav-link:hover, .active, div.card-footer .btn {
+    border-radius: 10px !important;
+}
+
+.expand-focus {
+    transition-timing-function: ease;
+    transition: width .5s;
+}
+
+.expand-focus:focus {
+    width: 180px !important;
+}
+

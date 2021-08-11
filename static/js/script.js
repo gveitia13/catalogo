@@ -261,6 +261,20 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     setTimeout(() => document.getElementById('container').style.display = 'block')
   })
 
+  //Intentando hacer zoom de la img card
+  var img = d.querySelectorAll('.div-img')
+  var modalImg = document.getElementById('img01')
+  // modalImg.style.width = '200px'
+  // modalImg.style.height = '200px'
+  var captionText = document.getElementById('caption')
+  img.forEach(e => e.onclick = function () {
+    $('#myModal').modal('show')
+    // modalImg.style.background = e.style.background
+    console.log(e.style.background)
+    modalImg.src = e.style.background.slice(5, e.style.background.length - 2)
+    captionText.innerText = d.querySelector('.card-body h5.card-title').innerText
+  })
+
   //Imprimiendo filro de busqueda en el loby con formulario
   d.forms[0].addEventListener('submit', ev => ev.preventDefault())
 })(document)
