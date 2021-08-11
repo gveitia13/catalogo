@@ -179,7 +179,6 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     d.querySelector('.ffooter').style.display = 'block'
   }
 ;
-
 ((d) => {
   window.addEventListener('load', () =>
     temaDefault(d), printProducts(d, productos, true, categorias),
