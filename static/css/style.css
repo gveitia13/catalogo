@@ -226,7 +226,8 @@ h4.my-4:first-child {
 .nav-link, div.card-footer .btn {
     border-radius: 15px !important;
 }
-.bg-gradient-dark{
+
+.bg-gradient-dark {
     border-radius: 10px;
 }
 
@@ -236,7 +237,7 @@ h4.my-4:first-child {
 }
 
 .expand-focus:focus {
-    width: 180px !important;
+    width: 170px !important;
 }
 
 #temaSwitch, label[for="temaSwitch"] {
