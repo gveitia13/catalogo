@@ -130,10 +130,10 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
   },
   cambiarTema = (d,) => {
     d.querySelector('a[rel="tema"]').children[0].classList.remove(
-      'mdi-weather-night', 'mdi-weather-sunny')
+      'mdi-weather-night', 'mdi-weather-sunny', 'text-white', 'text-black-50')
 
     let icon = localStorage.getItem('tema') ===
-    'Modo oscuro' ? ['mdi-weather-sunny','text-white'] : ['mdi-weather-night', 'text-white']
+    'Modo oscuro' ? ['mdi-weather-sunny',] : ['mdi-weather-night', 'text-white']
     let text = localStorage.getItem('tema') ===
     'Modo oscuro' ? 'Modo claro' : 'Modo oscuro'
 
@@ -142,7 +142,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
 
     d.querySelector('aside.main-sidebar').classList.remove('sidebar-dark-navy', 'sidebar-light-primary')
     d.querySelector('nav.main-header').classList.remove('navbar-navy', 'navbar-primary')
-    // d.querySelectorAll('i.tema').forEach(e => e.classList.remove('text-white'))
+    d.querySelectorAll('i.tema').forEach(e => e.classList.remove('text-white'))
     d.querySelector('a.brand-link').classList.remove('navbar-navy', 'navbar-primary')
     d.querySelectorAll('footer.main-footer').forEach(e => e.classList.remove('bg-navy', 'bg-primary'))
     d.querySelector('div.content-wrapper').classList.remove('bg-black-2', 'bg-gray-light')
@@ -152,7 +152,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     if (text === 'Modo claro') {
       d.querySelector('aside.main-sidebar').classList.add('sidebar-light-primary')
       d.querySelector('nav.main-header').classList.add('navbar-primary')
-      d.querySelectorAll('i.tema').forEach(e => e.classList.add('text-white'))
+      d.querySelectorAll('.ffooter ul li a i').forEach(e => e.classList.add('text-white'))
       d.querySelector('a.brand-link').classList.add('navbar-primary')
       d.querySelector('footer.ffooter').classList.add('bg-primary')
       d.querySelector('div.content-wrapper').classList.add('bg-gray-light')
