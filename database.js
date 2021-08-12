@@ -53,7 +53,7 @@ productos.push(new Product('Cable HDMI', categorias[1], '', 1,
 productos.push(new Product('Manillas AppleWatch', categorias[0], '42/44 MM', 1,
   '', 'static/prod-img/Awatch.jpg', 0, 525))
 
-productos.push(new Product('Bascula Digital', categorias[2],
+productos.push(new Product('Báscula Digital', categorias[2],
   'Peso máximo 150 kg', 1, '', 'static/prod-img/pesa.jpg', 0, 3100))
 
 productos.push(new Product('Funda AirPods', categorias[0],

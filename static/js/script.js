@@ -105,7 +105,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     let a = d.createElement('a')
     a.rel = 'tema'
     a.classList.add('nav-link')
-    a.style.cursor = 'pointer'
+    a.style.cursor = 'default'
     li.appendChild(a)
     let i = d.createElement('i')
     i.classList.add('nav-icon', 'mdi', 'mdi-weather-night', 'text-white', 'tema')
@@ -130,10 +130,10 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
   },
   cambiarTema = (d,) => {
     d.querySelector('a[rel="tema"]').children[0].classList.remove(
-      'mdi-weather-night', 'mdi-weather-sunny', 'text-white', 'text-black-50')
+      'mdi-weather-night', 'mdi-weather-sunny')
 
     let icon = localStorage.getItem('tema') ===
-    'Modo oscuro' ? ['mdi-weather-sunny',] : ['mdi-weather-night', 'text-white']
+    'Modo oscuro' ? ['mdi-weather-sunny','text-white'] : ['mdi-weather-night', 'text-white']
     let text = localStorage.getItem('tema') ===
     'Modo oscuro' ? 'Modo claro' : 'Modo oscuro'
 
@@ -142,7 +142,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
 
     d.querySelector('aside.main-sidebar').classList.remove('sidebar-dark-navy', 'sidebar-light-primary')
     d.querySelector('nav.main-header').classList.remove('navbar-navy', 'navbar-primary')
-    d.querySelectorAll('i.tema').forEach(e => e.classList.remove('text-white'))
+    // d.querySelectorAll('i.tema').forEach(e => e.classList.remove('text-white'))
     d.querySelector('a.brand-link').classList.remove('navbar-navy', 'navbar-primary')
     d.querySelectorAll('footer.main-footer').forEach(e => e.classList.remove('bg-navy', 'bg-primary'))
     d.querySelector('div.content-wrapper').classList.remove('bg-black-2', 'bg-gray-light')
@@ -152,6 +152,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     if (text === 'Modo claro') {
       d.querySelector('aside.main-sidebar').classList.add('sidebar-light-primary')
       d.querySelector('nav.main-header').classList.add('navbar-primary')
+      d.querySelectorAll('i.tema').forEach(e => e.classList.add('text-white'))
       d.querySelector('a.brand-link').classList.add('navbar-primary')
       d.querySelector('footer.ffooter').classList.add('bg-primary')
       d.querySelector('div.content-wrapper').classList.add('bg-gray-light')
@@ -189,7 +190,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
   $('.close').on('click', () => $('.modal').modal('hide'))
 
   d.querySelector('a[rel="servicios"]').addEventListener('click', () =>
-    console.log('click'))
+    console.log())
 
   //Buscando en tiempo real
   d.querySelector('form input').addEventListener('input', function () {
@@ -262,18 +263,9 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
   })
 
   //Intentando hacer zoom de la img card
-/*  var img = d.querySelectorAll('.div-img')
-  var modalImg = document.getElementById('img01')
-  // modalImg.style.width = '200px'
-  // modalImg.style.height = '200px'
-  var captionText = document.getElementById('caption')
-  img.forEach(e => e.onclick = function () {
-    $('#myModal').modal('show')
-    // modalImg.style.background = e.style.background
-    console.log(e.style.background)
-    modalImg.src = e.style.background.slice(5, e.style.background.length - 2)
-    captionText.innerText = d.querySelector('.card-body h5.card-title').innerText
-  })*/
+  d.querySelectorAll('#img-div').forEach(m => m.addEventListener('click', e => {
+    $('#modal-full').modal('show')
+  }))
 
   //Imprimiendo filro de busqueda en el loby con formulario
   d.forms[0].addEventListener('submit', ev => ev.preventDefault())

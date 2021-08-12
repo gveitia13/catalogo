@@ -16,13 +16,15 @@
     <!--     Font Awesome Icons-->
     <link rel="stylesheet" href="material-icons/css/icons.min.css">
     <!--     Theme style -->
-    <link rel="stylesheet" href="admin-lte3/css/adminlte.min.css">
+
+    <link rel="stylesheet" href="admin-lte3.10/css/adminlte.min.css">
     <!--     jQuery -->
     <script src="jquery/jquery-3.6.0.min.js"></script>
     <!--     Bootstrap 4 -->
+    <!--    <link rel="stylesheet" href="bootstrap5/bootstrap.min.css">-->
     <script src="bootstrap5/bootstrap.bundle.min.js"></script>
     <!--     AdminLTE App -->
-    <script src="admin-lte3/js/adminlte.min.js"></script>
+        <script src="admin-lte3.10/js/adminlte.min.js"></script>
     <!--    online-->
     <!-- My css -->
     <link rel="stylesheet" href="static/css/style.css">
@@ -158,9 +160,9 @@
       document.querySelectorAll('.year').forEach(e => e.innerHTML = currentYear === 2021 ? 2021 : `2021-${currentYear}`)
     </script>
     <!--    modal-->
-    <div class="modal fade modal-card" id="links1" tabindex="-1" role="dialog" aria-labelledby="links1"
+    <div class="modal fade modal-card " id="links1" tabindex="-1" role="dialog" aria-labelledby="links1"
          aria-hidden="true" style="min-width: 350px" data-target="#links1">
-        <div class="modal-dialog modal-dialog-top modal-dialog-slideup" role="document">
+        <div class="modal-dialog modal-dialog-top  modal-dialog-popout" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-navy border-bottom-0">
                     <h5 class="modal-title">
@@ -253,7 +255,28 @@
         </div>
         <!--        </div>-->
     </div>
+
+    <div class="modal fade" id="modal-full" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- /.box -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!-- /.modal -->
 <!-- Block javascript -->
 <!-- Functions -->
 <script src="static/js/objects.js"></script>

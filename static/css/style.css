@@ -114,13 +114,17 @@ body {
     height: 165px;
     background-size: cover !important;
     border-radius: .25rem .25rem 0 0;
-    border-radius: 10px 10px 0 0;
+    border-radius: 15px 15px 0 0;
     border-top: 5px solid transparent;
     cursor: pointer;
 }
 
-.div-img:hover {
+.div-img {
     opacity: .9;
+}
+
+.div-img:hover {
+    opacity: 1;
 }
 
 .div-img-profile {
@@ -197,7 +201,7 @@ h4.my-4:first-child {
 /*inflando*/
 
 .card-zoom {
-    border-radius: 10px;
+    border-radius: 15px;
     transition-timing-function: ease-in;
     transition: transform .5s;
 }
@@ -205,6 +209,7 @@ h4.my-4:first-child {
 .card-zoom:hover {
     transform: scale(1.03);
 }
+
 
 .w3-animate-opacity {
     animation: opac .7s
@@ -219,7 +224,7 @@ h4.my-4:first-child {
 }
 
 .nav-link:hover, .active, div.card-footer .btn {
-    border-radius: 10px !important;
+    border-radius: 15px !important;
 }
 
 .expand-focus {
@@ -231,6 +236,6 @@ h4.my-4:first-child {
     width: 180px !important;
 }
 
-a[rel="tema"]:hover {
-
+#temaSwitch, label[for="temaSwitch"] {
+    cursor: pointer;
 }
