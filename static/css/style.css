@@ -222,21 +222,38 @@ h4.my-4:first-child {
     font-size: 1.2rem !important;
 }
 
-.nav-link, div.card-footer .btn {
+div.card-footer .btn {
     border-radius: 15px !important;
 }
 
-.bg-gradient-dark {
-    border-radius: 10px;
+a.nav-link {
+    border-radius: 0 50rem 50rem 0 !important;
 }
 
-.expand-focus {
+footer.ffooter ul li a {
+    border-radius: 15px 15px 0 0;
+}
+
+.nav-sidebar > .nav-item > .nav-link.active {
+    box-shadow: none !important;
+}
+
+input.expand-focus {
     transition-timing-function: ease;
     transition: width .5s;
+    border-radius: 50rem 0 0 50rem !important;
+    width: 130px !important;
+    border-right: none !important;
+    padding-left: 13px !important;
 }
 
-.expand-focus:focus {
+input.expand-focus:focus {
     width: 170px !important;
+}
+
+form.form-inline > div > div > button {
+    border-bottom-right-radius: 50rem !important;
+    border-top-right-radius: 50rem !important;
 }
 
 #temaSwitch, label[for="temaSwitch"] {
