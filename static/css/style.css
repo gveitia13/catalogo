@@ -113,7 +113,6 @@ body {
     display: block;
     height: 165px;
     background-size: cover !important;
-    border-radius: .25rem .25rem 0 0;
     border-radius: 15px 15px 0 0;
     border-top: 5px solid transparent;
     cursor: pointer;
@@ -242,4 +241,12 @@ h4.my-4:first-child {
 
 #temaSwitch, label[for="temaSwitch"] {
     cursor: pointer;
+}
+
+a.brand-link img {
+    margin-left: .5rem;
+}
+
+li > a[rel="tema"] {
+    background-color: initial !important;
 }

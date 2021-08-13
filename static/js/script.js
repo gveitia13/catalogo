@@ -105,7 +105,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     let a = d.createElement('a')
     a.rel = 'tema'
     a.classList.add('nav-link')
-    a.style.cursor = 'default'
+    a.style.cursor = 'pointer'
     li.appendChild(a)
     let i = d.createElement('i')
     i.classList.add('nav-icon', 'mdi', 'mdi-weather-night', 'text-white', 'tema')
