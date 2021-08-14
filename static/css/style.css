@@ -271,7 +271,7 @@ li > a[rel="tema"] {
 @media (min-width: 993px) {
     .w3-modal-content {
         /*width: 900px*/
-        width: calc(100% - 500px)
+        width: calc(100% - 510px);
     }
 
     #modal-img {

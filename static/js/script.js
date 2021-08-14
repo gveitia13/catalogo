@@ -270,7 +270,6 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
       m.style.background.slice(5, m.style.background.length - 2)
     document.getElementById('modal01').style.display = 'block'
   }))
-
   //Imprimiendo filro de busqueda en el loby con formulario
   d.forms[0].addEventListener('submit', ev => ev.preventDefault())
 })(document)
