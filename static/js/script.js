@@ -219,6 +219,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
       // d.querySelector('#container').innerHTML = ''
       // printProducts(d, filro, false, catActual)
     }, 250)
+
   })
 
   //Configurando el tema de la pagina
@@ -263,8 +264,11 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
   })
 
   //Intentando hacer zoom de la img card
-  d.querySelectorAll('#img-div').forEach(m => m.addEventListener('click', e => {
-    $('#modal-full').modal('show')
+  d.querySelectorAll('.div-img').forEach(m => m.addEventListener('click', function (e) {
+    console.log(m.style.background)
+    d.querySelector('#modal01 > div > img').src =
+      m.style.background.slice(5, m.style.background.length - 2)
+    document.getElementById('modal01').style.display = 'block'
   }))
 
   //Imprimiendo filro de busqueda en el loby con formulario

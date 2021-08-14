@@ -54,49 +54,54 @@ productos.push(new Product('Manillas AppleWatch', categorias[0], '42/44 MM', 1,
   '', 'static/prod-img/Awatch.jpg', 0, 525))
 
 productos.push(new Product('Báscula Digital', categorias[2],
-  'Peso máximo 150 kg', 1, '', 'static/prod-img/pesa.jpg', 0, 3100))
+  'Peso máximo 150 kg', 1, '', ['static/prod-img/pesa.jpg'], 0, 3100))
 
 productos.push(new Product('Funda AirPods', categorias[0],
-  '', 1, '', 'static/prod-img/funda.jpg', 0, 500))
+  '', 1, '', ['static/prod-img/funda.jpg'], 0, 500))
 
 productos.push(new Product('Funda para Celulares', categorias[0],
-  '', 1, '', 'static/prod-img/cover.jpg', 0, 250))
+  '', 1, '', ['static/prod-img/cover.jpg'], 0, 250))
 
 productos.push(new Product('Mica líquida', categorias[0],
-  '', 1, '', 'static/prod-img/liquida.jpg', 0, 225))
+  '', 1, '', ['static/prod-img/liquida.jpg'], 0, 225))
 
 productos.push(new Product('Xiaomi Mi Band 5', categorias[0],
-  '', 1, '', 'static/prod-img/xiaomiband.jpg', 60, 3600))
+  '', 1, '', ['static/prod-img/xiaomiband.jpg'], 60, 3600))
 
 productos.push(new Product('Xiaomi Mi Watch Lite', categorias[0],
-  '', 1, '', 'static/prod-img/watchLite.jpg', 120, 7500))
+  '', 1, '', ['static/prod-img/watchLite.jpg'], 120, 7500))
 
 productos.push(new Product('Xiaomi Earbuds Basic 2', categorias[0],
-  '', 1, '', 'static/prod-img/earbuds.jpg', 0, 2300))
+  '', 1, '', ['static/prod-img/earbuds.jpg'], 0, 2300))
 
 productos.push(new Product('Mause Gaming', categorias[1],
-  'Inalámbrico 6D', 1, '', 'static/prod-img/mouse6D.jpg', 30, 1800))
+  'Inalámbrico 6D', 1, '', ['static/prod-img/mouse6D.jpg'], 30, 1800))
 
 productos.push(new Product('Speaker Bluetooth', categorias[2],
-  'Bocinas por Bluetooth', 1, '', 'static/prod-img/bocina.jpg', 60, 3500))
+  'Bocinas por Bluetooth', 1, '', ['static/prod-img/bocina.jpg'], 60, 3500))
 
 productos.push(new Product('Fuente EVGA', categorias[1],
-  'EVGA 80+ Bronce 600W', 1, '', 'static/prod-img/fuente.jpg', 125,))
+  'EVGA 80+ Bronce 600W', 1, '', ['static/prod-img/fuente.jpg'], 125,))
 
 productos.push(new Product('HDD Externo', categorias[1],
-  '8 TB', 1, '', 'static/prod-img/HDD.jpg', 345,))
+  '8 TB', 1, '', ['static/prod-img/HDD.jpg'], 345,))
 
 productos.push(new Product('Panel Frontal USB', categorias[1],
-  '2 puertos USB 3.0 + 2 puertos USB 2.0', 1, '', 'static/prod-img/USB.jpg', 35,))
+  '2 puertos USB 3.0 + 2 puertos USB 2.0', 1, '', ['static/prod-img/USB.jpg'], 35,))
 
 productos.push(new Product('Cadena de plata', categorias[2],
   'Plata 925, peso 103 gramos, las letras son de oro\nPreguntar por el precio',
-  1, '925', 'static/prod-img/cadena.jpg', 0, 0, 1))
+  1, '925', ['static/prod-img/cadena.jpg'], 0, 0, 1))
 
 productos.push(new Product('Moto', categorias[0],
   'De poco uso, tiene un detalle en la esquina superior izquierda. Compatible con 2G y 3G',
-  1, 'E4', 'static/prod-img/moto.jpg', 0, 0, 1))
+  1, 'E4', ['static/prod-img/moto.jpg'], 0, 0, 1))
 
 productos.push(new Product('Xiaomi', categorias[0],
   'Nuevo 2G / 3G / 4G',
-  1, 'Redmi 9C', 'static/prod-img/9C.jpg', 300, 19500, 1))
+  1, 'Redmi 9C', ['static/prod-img/9C.jpg'], 300, 19500, 1))
+
+productos.push(new Product('TEST', categorias[0],
+  'Nuevo 2G / 3G / 4G',
+  1, 'Redmi 9C', ['static/prod-img/9C.jpg', 'static/prod-img/moto.jpg', 'static/prod-img/cadena.jpg'],
+  300, 19500, 1))

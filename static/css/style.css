@@ -267,3 +267,14 @@ a.brand-link img {
 li > a[rel="tema"] {
     background-color: initial !important;
 }
+
+@media (min-width: 993px) {
+    .w3-modal-content {
+        /*width: 900px*/
+        width: calc(100% - 500px)
+    }
+
+    #modal-img {
+        height: 92vh;
+    }
+}

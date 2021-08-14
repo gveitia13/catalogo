@@ -40,7 +40,7 @@ class Product {
   }
 
   constructor (name, category, description, cant, model,
-    img = 'static/img/empty.png', price = 0, cup = 0, pioridad = 100) {
+    img = ['static/img/empty.png'], price = 0, cup = 0, pioridad = 100) {
     this._name = name
     this._category = category
     this._price = price
@@ -70,7 +70,7 @@ class Product {
     <span class="d-none">${this._name}</span>
     <div class="card m-1 prod-card ml-2 mr-2 ${tema} ${hover} card-zoom">
              ${ribbon}
-            <div class="card-img-top div-img" style='background: url("${this._img}")'></div>
+            <div class="card-img-top div-img" style='background: url("${this._img.toString()}")'></div>
             <div class="card-body">
             <h5 class="card-title"><b>${this._name}</b> ${this._model}</h5>
             <p class="card-text ">Precio: <b>${precio + cup}</b><br>${this._description}

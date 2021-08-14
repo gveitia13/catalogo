@@ -232,44 +232,10 @@
         </div>
     </div>
 
-    <div class="modal fade modal-xl" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal"
-         aria-hidden="true" style="min-width: 350px" data-target="#myModal">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-slideup" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-transparent border-bottom-0">
-                    <h5>
-                        <div id="caption" class="modal-title text-center text-white"></div>
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <!--                            <div class="modal-body pb-0">-->
-                <!--                    <div class="card-img-overlay" id="img01"></div>-->
-                <img class="modal-content modal-card-content" id="img01">
-
-
-            </div>
-        </div>
-        <!--        </div>-->
-    </div>
-
-    <div class="modal fade" id="modal-full" tabindex="-1">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <!-- /.box -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
+    <div id="modal01" class="w3-modal" onclick="this.style.display='none'" style="padding-top:45px;z-index: 10" tabindex="-1">
+<!--        <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>-->
+        <div class="w3-modal-content w3-animate-zoom" >
+            <img src="" style="width:100%" id="modal-img">
         </div>
     </div>
 </div>
