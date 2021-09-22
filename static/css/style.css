@@ -43,7 +43,6 @@ body {
     margin-top: 0 !important
 }
 
-
 .modal.fade .modal-dialog {
     transition-duration: .12s
 }
@@ -277,4 +276,18 @@ li > a[rel="tema"] {
     #modal-img {
         height: 92vh;
     }
+}
+
+.circular {
+    border-radius: 1rem !important;
+}
+
+.circular-top {
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
+}
+
+.circular-bottom {
+    border-bottom-right-radius: 1rem !important;
+    border-bottom-left-radius: 1rem !important;
 }
