@@ -307,7 +307,7 @@ input.expand-focus {
 }
 
 input.expand-focus:focus {
-    width: 170px !important;
+    width: 150px !important;
 }
 
 form.form-inline > div > div > button {
