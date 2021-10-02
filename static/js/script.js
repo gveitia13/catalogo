@@ -81,7 +81,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
 
       pro.sort((a, b) => a.pioridad - b.pioridad)
       let cate = d.createElement('h4')
-      cate.classList.add('my-4', 'cate')
+      cate.classList.add('my-h4', 'cate', 'px-4')
       cate.innerText = e.name
       let container = d.querySelector('#container')
       container.appendChild(cate)
@@ -178,6 +178,10 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     d.querySelector('aside').style.display = 'block'
     d.querySelector('nav.main-header').style.display = 'flex'
     d.querySelector('.ffooter').style.display = 'block'
+  },
+  removeAcents = str => {
+    const acents = { á: 'a', é: 'e', í: 'i', ó: 'o', ú: 'u', ñ: 'n' }
+    return str.split('').map(e => acents[e] || e).join('').toString()
   }
 ;
 ((d) => {
@@ -187,7 +191,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
   d.querySelectorAll('a[rel=modal]').forEach(e =>
     e.addEventListener('click', () => $('#links1').modal('show')))
 
-  $('.close').on('click', () => $('.modal').modal('hide'))
+  $('.btn-close').on('click', () => $('.modal').modal('hide'))
 
   d.querySelector('a[rel="servicios"]').addEventListener('click', () =>
     console.log())
@@ -207,7 +211,8 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
         e.model.toLowerCase().includes(this.value.toLowerCase()))
 
       d.querySelectorAll('div.div-card span').forEach(f => {
-        if (!f.innerText.toLowerCase().includes(this.value.toLowerCase())) {
+        let str = removeAcents(f.innerText.toLowerCase())
+        if (!str.includes(this.value.toLowerCase())) {
           f.parentElement.classList.remove('d-md-inline-block', 'd-sm-inline-block')
           f.parentElement.classList.add('d-none')
 
@@ -264,20 +269,52 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
   })
 
   //Intentando hacer zoom de la img card
-  d.querySelectorAll('.div-img').forEach(m => m.addEventListener('click', function (e) {
-    console.log(m.style.background)
-    d.querySelector('#modal01 > div > img').src =
-      m.style.background.slice(5, m.style.background.length - 2)
-    document.getElementById('modal01').style.display = 'block'
-  }))
+  d.querySelectorAll('.div-img').forEach(m =>
+    m.addEventListener('click', function (e) {
+      // console.log(m.style.background)
+      // d.querySelector('#modal01 > div > img').src =
+      //   m.style.background.slice(5, m.style.background.length - 2)
+      // document.getElementById('modal01').style.display = 'block'
+    }))
+  // Controlando el logo de la pagina
+  document
+    .querySelector('a[data-widget="pushmenu"]')
+    .addEventListener('click', () => {
+      let icon_sm = document.querySelector('.icon-sm'),
+        icon_lg = document.querySelector('.icon-lg')
+      if ($(window).width() <= 974) return
 
-  // console.log(navigator.activeVRDisplays)
-  // console.log(navigator.clipboard)
-  // console.log(navigator.credentials)
-  // console.log(navigator.mediaDevices)
-  // console.log(navigator.userAgent)
-  // console.log(navigator.onLine)
+      if (icon_sm.classList.contains('d-none')) {
+        icon_sm.classList.remove('d-none')
+        icon_lg.classList.add('d-none')
+      } else {
+        icon_sm.classList.add('d-none')
+        icon_lg.classList.remove('d-none')
+      }
+    })
 
+  //Obteniendo detalles del producto por ajax
+  d.querySelectorAll('.div-img').forEach(e =>
+    e.addEventListener('click', function () {
+      let data = productos.find(e => e.name === this.id)
+      console.log(data)
+      data['cant'] = this.cant === undefined ? 1 : this.cant
+
+      let precio = data.price ? `${data.price} USD ` : ``,
+        cup = data.cup ? `${data.cup} CUP` : ``
+
+      $('#prodDetails h5.name').html(`<b>${data['name']} ${data['model']}</b>`)
+      $('#prodDetails span.stock').html(` Cantidad: ${data['cant']}`)
+      $('#prodDetails p.desc').text(`${data['description']}`)
+      $('#prodDetails span.price').html(`<b>${precio + cup}</b>`)
+      d.querySelector(
+        '#prodDetails div.imgProdDetails'
+      ).style = `background: url('${data['img']}');background-color:#333;`
+      d.querySelector('#prodDetails button.prod-id').name = this.id
+
+      $('#prodDetails').modal('show')
+    })
+  )
   //Imprimiendo filro de busqueda en el loby con formulario
   d.forms[0].addEventListener('submit', ev => ev.preventDefault())
 })(document)

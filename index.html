@@ -6,13 +6,13 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Catálogo</title>
     <meta name="description"
-          content="Catálogo: Un sitio responsivo usando js, css, Adminlte3 y w3css. Con una amistosa funcionalidad, cuenta con un flitro de búsqueda y otras animaciones"/>
+          content="Catálogo: Entra a mi Catálogo web y observa o compra mis productos, con entrega a domicilio incluido."/>
     <meta name="keywords"
           content="catalogo, responsive, responsivo, filter, filtro, busqueda, card, adminlte, static, estatico"/>
     <meta name="author" content="TechnoStar"/>
 
     <link rel="icon" href="static/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="w3-school/css/w3pro.min.css">
+    <!--    <link rel="stylesheet" href="w3-school/css/w3pro.min.css">-->
     <!--     Font Awesome Icons-->
     <link rel="stylesheet" href="material-icons/css/icons.min.css">
     <!--     Theme style -->
@@ -59,10 +59,17 @@
             </div>
         </form>
         <ul class="navbar-nav ml-auto">
+            <!--            <li class="nav-item">
+                            <a rel="list" class="nav-link px-1" style="cursor:pointer;">
+                                <i class="mdi mdi-file-pdf d-sm-inline-block"></i>
+                                <span class="d-sm-inline-block d-none"> PDF</span>
+                            </a>
+                        </li>-->
             <li class="nav-item">
-                <a rel="list" class="nav-link px-1" style="cursor:pointer;">
-                    <i class="mdi mdi-file-pdf d-sm-inline-block"></i>
-                    <span class="d-sm-inline-block d-none"> PDF</span>
+                <a rel="cart" class="nav-link pl-1 pr-1 " style="cursor: pointer" data-toggle="modal"
+                   data-target="#cart"><i
+                        class="mdi mdi-cart"></i>
+                    <span class=""> Carrito</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -76,15 +83,24 @@
     <!-- Sidebar -->
     <aside class="main-sidebar sidebar-dark-navy elevation-4">
         <div class="user-panel d-flex elevation-4">
-            <a href="#" class="brand-link navbar-navy border-bottom-0 elevation-4 text-white">
-                <img src="static/img/icon1.png"
+            <a href="#" class="brand-link navbar-navy border-bottom-0 elevation-4 text-white py-1">
+                <!--                <img src="static/img/icon1.png"
+                                     alt="TechnoSTAR Logo"
+                                     class="brand-image img-circle" style="margin-left: .4rem;">
+                                <span class="brand-text font-weight-light"><strong
+                                        style="font-family: 'JetBrains Mono ExtraBold',sans-serif">CATALOGO</strong></span>-->
+                <img src="static/img/logo-sm-yellow-white.png"
                      alt="TechnoSTAR Logo"
-                     class="brand-image img-circle" style="margin-left: .4rem;">
-                <span class="brand-text font-weight-light"><strong
-                        style="font-family: 'JetBrains Mono ExtraBold',sans-serif">CATALOGO</strong></span>
+                     style="margin-left: 0;height: 47px;width: 46px"
+                     class="d-none icon-sm">
+
+                <img src="static/img/logo-lg-yellow-white.png"
+                     alt="TechnoSTAR Logo"
+                     style="margin-left: 0;width: 120px;height: 47px"
+                     class="icon-lg">
             </a>
         </div>
-        <div class="sidebar border-top-0  px-0">
+        <div class="sidebar border-top-0 pl-0  px-0">
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false" id="ul-sidebar">
@@ -113,17 +129,17 @@
     <!-- Content -->
 
     <div class="content-wrapper">
-        <div class="content">
-            <div class="w3-row-padding">
-                <div class="container-fluid w3-animate-zoom" id="container">
-                    <!-- Se hace con JS -->
-                </div>
+        <div class="content px-lg-4 pt-3 px-0">
+            <!--            <div class="w3-row-padding">-->
+            <div class="container-fluid w3-animate-zoom" id="container">
+                <!-- Se hace con JS -->
             </div>
+            <!--            </div>-->
         </div>
     </div>
 
     <!-- Main Footer -->
-    <footer class="main-footer text-center bg-navy border-top-0 pt-2 pb-1 d-none d-md-block">
+    <footer class="main-footer text-center bg-navy border-top-0 pt-2 pb-1">
         <div>
             <a href="https://t.me/LilGil"><i class="mdi mdi-telegram w3-hover-opacity" style="color: #2da5e1"></i></a>
             <a href="https://api.whatsapp.com/send/?phone=+5358496023&text=Hola&app_absent=1"><i
@@ -142,7 +158,7 @@
         reserved.
     </footer>
 
-    <footer class="main-footer bg-navy border-top-0 pb-0 pt-1 px-1 d-md-none d-sm-block text-center ffooter">
+    <footer class="main-footer bg-navy border-top-0 pb-0 pt-1 px-1 d-md-none d-none text-center ffooter">
         <ul class="m-0 p-0 d-inline-flex" id="ul_footer">
             <li class="d-inline-block"><a class="btn w-h p-0 border-0 ">
                 <i class="mdi mdi-settings d-block mdi-24px tema"></i>
@@ -159,84 +175,121 @@
       document.querySelectorAll('.year').forEach(e => e.innerHTML = currentYear === 2021 ? 2021 : `2021-${currentYear}`)
     </script>
     <!--    modal-->
-    <div class="modal fade modal-card " id="links1" tabindex="-1" role="dialog" aria-labelledby="links1"
+    <div class="modal fade modal-card " id="links1" tabindex="-1" role="dialog" aria-labelledby="asd"
          aria-hidden="true" style="min-width: 350px" data-target="#links1">
         <div class="modal-dialog modal-dialog-top  modal-dialog-popout" role="document">
             <div class="modal-content circular">
-                <div class="modal-header bg-navy border-bottom-0 circular-top">
+                <div class="modal-header bg-navy border-bottom-0 circular-top py-2">
                     <h5 class="modal-title">
-                        <i class="mdi mdi-account-star mdi-18px"></i> Contacto
+                        <!--                        <i class="mdi mdi-account-star mdi-18px"></i> Contacto-->
+                        <img src="static/img/logo-lg-yellow-white.png"
+                             alt="TechnoSTAR Logo"
+                             style="margin-left: .4rem;" width="120" height="50">
                     </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                    <button type="button" class="btn-close mt-2 btn-close-white" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true"></span>
                     </button>
                 </div>
-                <div class="modal-body bg-light pb-0 circular">
-                    <div class="card bg-ligh circular">
-                        <div class="card-header text-muted border-bottom-0">
-                            Programador
-                        </div>
-                        <div class="card-body pt-0">
-                            <div class="row">
-                                <div class="col-7">
-                                    <h2 class="lead"><b>Gilberto Veitia</b></h2>
-                                    <p class="text-muted text-sm">Web Developer / UX / Graphic Artist
-                                    </p>
-                                    <ul class="ml-4 mb-0 fa-ul text-muted">
-                                        <li class="small"><span class="fa-li"><i
-                                                class="mdi mdi-home-city"></i></span> Dirección: Caibarién / Villa
-                                            Clara / Cuba
-                                        </li>
-                                        <li class="small"><span class="fa-li"><i class="mdi mdi-cellphone-android"></i></span>
-                                            Teléfono #:<a href="tel:+53 58496023" class="text-muted"> +53 58496023</a>
-                                        </li>
-                                        <li class="small"><span class="fa-li"><i class="mdi mdi-email"></i></span>
-                                            Correo: <a href="mailto:gveitia13@gmail.com?Subject=Hola%20Gilbert"
-                                                       target="_top" class="text-muted">gveitia13@gmail.com</a>
-                                        </li>
-                                    </ul>
-                                    <p class="text-muted text-sm">Contáctame por WhatsApp o por otra de mis redes
-                                        sociales</p>
-                                </div>
-                                <div class="col-5 text-center">
-                                    <div class="img-circle img-fluid div-img-profile"></div>
-                                    <!-- <img src="static/img/profile.jpg" alt="" class="img-circle img-fluid">-->
-                                </div>
+                <div class="modal-body bg-light p-0 circular-bottom">
+                    <!--                    <div class="card bg-ligh circular">-->
+                    <div class="card-header text-muted border-bottom-0">
+                        Programador
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-7">
+                                <h2 class="lead"><b>Gilberto Veitia</b></h2>
+                                <p class="text-muted text-sm">Web Developer / UX / Graphic Artist
+                                </p>
+                                <ul class="ml-4 mb-0 fa-ul text-muted">
+                                    <li class="small"><span class="fa-li"><i
+                                            class="mdi mdi-home-city"></i></span> Dirección: Caibarién / Villa
+                                        Clara / Cuba
+                                    </li>
+                                    <li class="small"><span class="fa-li"><i
+                                            class="mdi mdi-cellphone-android"></i></span>
+                                        Teléfono #:<a href="tel:+53 58496023" class="text-muted"> +53 58496023</a>
+                                    </li>
+                                    <li class="small"><span class="fa-li"><i class="mdi mdi-email"></i></span>
+                                        Correo: <a href="mailto:gveitia13@gmail.com?Subject=Hola%20Gilbert"
+                                                   target="_top" class="text-muted">gveitia13@gmail.com</a>
+                                    </li>
+                                </ul>
+                                <p class="text-muted text-sm">Contáctame por WhatsApp o por otra de mis redes
+                                    sociales</p>
                             </div>
-                        </div>
-                        <div class="card-footer ">
-                            <div class="text-right circular-bottom">
-                                <a href="https://t.me/LilGil"><i class="mdi mdi-telegram w3-hover-opacity"
-                                                                 style="color: #2da5e1"></i></a>
-                                <a href="https://api.whatsapp.com/send/?phone=+5358496023&text=Hola&app_absent=1"><i
-                                        class="mdi mdi-whatsapp w3-hover-opacity" style="color: #2bc54e"></i></a>
-                                <a href="https://www.linkedin.com/in/gilberto-veitia-urbay-45941116b"><i
-                                        class="mdi mdi-linkedin w3-hover-opacity" style="color: #1178b3"></i></a>
-                                <a href="https://github.com/gveitia13"><i class="mdi mdi-github-face w3-hover-opacity"
-                                                                          style="color: dimgray"></i></a>
-                                <a href="https://facebook.com/GilbeStar"><i class="mdi mdi-facebook w3-hover-opacity"
-                                                                            style="color:#1976d2;"></i></a>
-                                <a href="https://instagram.com/gilbertveitiaurbay"><i
-                                        class="mdi mdi-instagram w3-hover-opacity" style="color:#c93470"></i></a>
-                                <a href="https://twitter.com/GilbeStar?s=08"><i
-                                        class="mdi mdi-twitter w3-hover-opacity"></i></a>
-
-                                <a href="https://gveitia13.github.io/cv/" class="btn btn-sm btn-outline-primary"
-                                   target="_blank">
-                                    <i class="mdi mdi-account"></i> Ver más
-                                </a>
+                            <div class="col-5 text-center">
+                                <div class="img-circle img-fluid div-img-profile"></div>
+                                <!-- <img src="static/img/profile.jpg" alt="" class="img-circle img-fluid">-->
                             </div>
                         </div>
                     </div>
+                    <div class="card-footer ">
+                        <div class="text-right circular-bottom">
+                            <a href="https://t.me/LilGil"><i class="mdi mdi-telegram w3-hover-opacity"
+                                                             style="color: #2da5e1"></i></a>
+                            <a href="https://api.whatsapp.com/send/?phone=+5358496023&text=Hola&app_absent=1"><i
+                                    class="mdi mdi-whatsapp w3-hover-opacity" style="color: #2bc54e"></i></a>
+                            <a href="https://www.linkedin.com/in/gilberto-veitia-urbay-45941116b"><i
+                                    class="mdi mdi-linkedin w3-hover-opacity" style="color: #1178b3"></i></a>
+                            <a href="https://github.com/gveitia13"><i class="mdi mdi-github-face w3-hover-opacity"
+                                                                      style="color: dimgray"></i></a>
+                            <a href="https://facebook.com/GilbeStar"><i class="mdi mdi-facebook w3-hover-opacity"
+                                                                        style="color:#1976d2;"></i></a>
+                            <a href="https://instagram.com/gilbertveitiaurbay"><i
+                                    class="mdi mdi-instagram w3-hover-opacity" style="color:#c93470"></i></a>
+                            <a href="https://twitter.com/GilbeStar?s=08"><i
+                                    class="mdi mdi-twitter w3-hover-opacity"></i></a>
+
+                            <a href="https://gveitia13.github.io/cv/" class="btn btn-sm btn-outline-primary"
+                               target="_blank">
+                                <i class="mdi mdi-account"></i> Ver más
+                            </a>
+                        </div>
+                    </div>
+                    <!--                    </div>-->
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="modal01" class="w3-modal" onclick="this.style.display='none'" style="padding-top:45px;z-index: 10" tabindex="-1">
-<!--        <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>-->
-        <div class="w3-modal-content w3-animate-zoom" >
-            <img src="" style="width:100%" id="modal-img">
+    <div class="modal fade modal-card " id="prodDetails" tabindex="-1" role="dialog" aria-labelledby="prodDetails"
+         aria-hidden="true" style="min-width: 350px;height: auto;padding: 0" data-target="#prodDetails">
+        <div class="modal-dialog modal-dialog-popout modal-dialog-scrollable modal" role="document">
+            <div class="modal-content circular border-0 shadow-none">
+                <div class="modal-header border-bottom-0 circular-top py-2">
+                    <h5 class="modal-title user-select-none">
+                        <img src="static/img/logo-lg-red-black.png"
+                             alt="TechnoSTAR Logo"
+                             style="margin-left: .4rem;" width="120" height="50">
+                    </h5>
+                    <button type="button" class="btn-close mt-2" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+
+                <div class="modal-body p-0 circular-bottom bg-light">
+                    <div class="img-fluid imgProdDetails" style="background: url('static/img/profile.jpg')"></div>
+
+                    <div class="card-body circular">
+                        <h5 class="card-title name"><b>Name</b></h5>
+                        <br>
+                        <span class="card-text stock"> Stock: 6</span>
+                        <p class="card-text text-justify desc text-muted">Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit.
+                            Delectus
+                        </p>
+                        <div>
+                            <span class="cart-text price text-lg"><b>123</b> CUP</span>
+                            <button name="a" class="btn prod-id bg-gradient-orange text-white circular float-right">
+                                <i class="mdi mdi-cart-plus"></i>
+                                <div class="d-inline-block">Add to cart</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

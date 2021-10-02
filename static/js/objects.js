@@ -58,27 +58,52 @@ class Product {
 
     let ribbon = this._pioridad < 100 ?
         `<div class="ribbon-wrapper">
-      <div class="ribbon bg-gradient-warning" style="text-transform: none">
-          <small><i class="mdi mdi-star"></i>Destacado<i class="mdi mdi-star"></i></small>
-      </div>
-    </div>` : '',
-      tema = localStorage.getItem('tema') === 'Modo claro' ? 'bg-navy' : 'bg-light',
-      hover = localStorage.getItem('tema') === 'Modo claro' ? 'w3-hover-shadow-light' : 'w3-hover-shadow'
+            <div class="ribbon bg-gradient-warning" style="text-transform: none">
+                <small><i class="mdi mdi-star"></i>Destacado<i class="mdi mdi-star"></i></small>
+            </div>
+         </div>` : '',
+      tema = localStorage.getItem('tema') === 'Modo claro'
+        ? 'bg-navy' : 'bg-light',
+      hover = localStorage.getItem('tema') === 'Modo claro'
+        ? 'w3-hover-shadow-light' : 'w3-hover-shadow',
+      cant = this._cant === undefined ? 3 : this._cant
 
     return `
-<div class="col-12 col-sm-6 col-md-4  col-lg-3 p-1 d-md-inline-block d-sm-inline-block div-card">
-    <span class="d-none">${this._name}</span>
-    <div class="card m-1 prod-card ml-2 mr-2 ${tema} ${hover} card-zoom">
+<div class="col-12 col-sm-6 col-md-4  col-lg-3 py-lg-3 px-lg-2 px-0 py-2 div-card">
+    <span class="d-none prodName">${this._name}</span>
+    <div class="card m-1 prod-card ml-2 mr-2 ${tema} ${hover} card-zoom circular">
+         <div class="row row-card"> 
              ${ribbon}
-            <div class="card-img-top div-img" style='background: url("${this._img.toString()}")'></div>
-            <div class="card-body">
-            <h5 class="card-title"><b>${this._name}</b> ${this._model}</h5>
-            <p class="card-text ">Precio: <b>${precio + cup}</b><br>${this._description}
-            </p>
-            <p class="card-text">
-                <small class="text-muted"></small>
-            </p>
-        </div>
+            <div class="col-4 col-sm-12">
+                <div class="card-img-top div-img circular-top" id="${this._name}"
+                style='background: url("${this._img.toString()}")'></div>
+            </div>
+            <div class="col-6 col-sm-12 row-card px-0">
+                <div class="card-body row-card pr-0 py-sm-3 px-sm-4">
+                    <h5 class="card-title"><b>${this._name}</b> ${this._model}</h5>
+                    <p class="card-text m-0">Precio: <b>${precio + cup}</b>
+<!--                    <br>${this._description}-->
+                    </p>
+                    <p class="card-text p-stock m-0">
+                       Cantidad: ${cant}
+                    </p>
+                    <p class="card-text prod-desc text-muted">
+                        ${this._description}
+                    </p>
+                     <button name="${this._name}" 
+                            class="btn prod-id bg-gradient-orange text-white circular btn-sm float-right d-sm-inline-block d-none">
+                        <i class="mdi mdi-cart-plus"></i>
+                        <div class="d-inline-block">Añadir al carrito</div>
+                     </button>
+                </div>
+            </div>
+            <div class="col-2 d-sm-none d-flex align-items-center row-card pl-0">
+                <button name="${this._name}" 
+                        class="btn prod-id bg-gradient-orange text-white circular-circle">
+                    <i class="mdi mdi-cart-plus"></i>
+                </button>
+            </div>
+        </div> 
     </div>
 </div>
 `

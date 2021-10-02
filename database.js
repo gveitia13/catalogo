@@ -99,7 +99,7 @@ productos.push(new Product('Moto', categorias[0],
 
 productos.push(new Product('Xiaomi', categorias[0],
   'Nuevo 2G / 3G / 4G',
-  1, 'Redmi 9C', ['static/prod-img/9C.jpg'], 300, 19500, 1))
+  10, 'Redmi 9C', ['static/prod-img/9C.jpg'], 300, 19500, 1))
 
 // productos.push(new Product('TEST', categorias[0],
 //   'Nuevo 2G / 3G / 4G',
