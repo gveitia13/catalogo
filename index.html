@@ -12,20 +12,28 @@
     <meta name="author" content="TechnoStar"/>
 
     <link rel="icon" href="static/img/favicon.png" type="image/x-icon">
-    <!--    <link rel="stylesheet" href="w3-school/css/w3pro.min.css">-->
     <!--     Font Awesome Icons-->
     <link rel="stylesheet" href="material-icons/css/icons.min.css">
     <!--     Theme style -->
-
     <link rel="stylesheet" href="admin-lte3.10/css/adminlte.min.css">
     <!--     jQuery -->
     <script src="jquery/jquery-3.6.0.min.js"></script>
     <!--     Bootstrap 4 -->
-    <!--    <link rel="stylesheet" href="bootstrap5/bootstrap.min.css">-->
     <script src="bootstrap5/bootstrap.bundle.min.js"></script>
     <!--     AdminLTE App -->
     <script src="admin-lte3.10/js/adminlte.min.js"></script>
-    <!--    online-->
+    <!-- DataTable -->
+    <link rel="stylesheet"
+          href="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/css/responsive.bootstrap.min.css' %}">
+    <script src="{% static 'lib/datatables-1.10.20/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'lib/datatables-1.10.20/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/js/responsive.bootstrap4.min.js' %}"></script>
+    <!-- Touchspin -->
+    <link rel="stylesheet" href="bootstrap-touchspin-4.3.0/jquery.bootstrap-touchspin.css">
+    <script src="bootstrap-touchspin-4.3.0/jquery.bootstrap-touchspin.js"></script>
+    <!-- sweetAlert -->
+    <script src="sweetalert2/sweetalert2.all.min.js"></script>
     <!-- My css -->
     <link rel="stylesheet" href="static/css/style.css">
     <!-- Block head -->
@@ -94,6 +102,14 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false" id="ul-sidebar">
                     <li class="nav-item">
+                        <a rel="cart" class="nav-link" style="cursor: pointer" data-toggle="modal" data-target="#cart">
+                            <i class="nav-icon mdi mdi-cart text-white tema"></i>
+                            <p>
+                                Ver Carrito
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a rel="servicios" id="lol" class="nav-link" style="cursor: pointer">
                             <i class="nav-icon mdi mdi-settings text-white tema"></i>
                             <p>
@@ -116,7 +132,6 @@
         </div>
     </aside>
     <!-- Content -->
-
     <div class="content-wrapper">
         <div class="content px-lg-4 pt-3 px-0">
             <!--            <div class="w3-row-padding">-->

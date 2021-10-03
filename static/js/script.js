@@ -182,6 +182,18 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
   removeAcents = str => {
     const acents = { á: 'a', é: 'e', í: 'i', ó: 'o', ú: 'u', ñ: 'n' }
     return str.split('').map(e => acents[e] || e).join('').toString()
+  },
+  Alerta = (text, icon = 'success') => {
+    const Alerta = Swal.mixin({
+      toast: true,
+      position: 'bottom-end',
+      showConfirmButton: false,
+      timer: 3000
+    })
+    Alerta.fire({
+      icon: icon,
+      title: text
+    })
   }
 ;
 ((d) => {
@@ -271,10 +283,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
   //Intentando hacer zoom de la img card
   d.querySelectorAll('.div-img').forEach(m =>
     m.addEventListener('click', function (e) {
-      // console.log(m.style.background)
-      // d.querySelector('#modal01 > div > img').src =
-      //   m.style.background.slice(5, m.style.background.length - 2)
-      // document.getElementById('modal01').style.display = 'block'
+
     }))
   // Controlando el logo de la pagina
   document
@@ -293,13 +302,22 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
       }
     })
 
-  //Obteniendo detalles del producto por ajax
-  d.querySelectorAll('.div-img').forEach(e =>
+  //adicionando al carro por los botones
+  d.querySelectorAll('button.prod-id').forEach(e =>
     e.addEventListener('click', function () {
-      let data = productos.find(e => e.name === this.id)
-      console.log(data)
-      data['cant'] = this.cant === undefined ? 1 : this.cant
 
+    }))
+
+  d.querySelectorAll('.prod-card').forEach(e =>
+    e.addEventListener('click', function (f) {
+      if (f.target.closest('button.prod-id')) {
+        let btn = f.target.closest('button.prod-id'),
+          data = productos.find(e => e.name === btn.name)
+        Alerta(`${data.name} añadido al carrito`, 'success')
+        return
+      }
+      let data = productos.find(e => e.name === this.id)
+      data['cant'] = this.cant === undefined ? 1 : this.cant
       let precio = data.price ? `${data.price} USD ` : ``,
         cup = data.cup ? `${data.cup} CUP` : ``
 

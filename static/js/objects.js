@@ -71,18 +71,17 @@ class Product {
     return `
 <div class="col-12 col-sm-6 col-md-4  col-lg-3 py-lg-3 px-lg-2 px-0 py-2 div-card">
     <span class="d-none prodName">${this._name}</span>
-    <div class="card m-1 prod-card ml-2 mr-2 ${tema} ${hover} card-zoom circular">
+    <div class="card m-1 prod-card ml-2 mr-2 ${tema} ${hover} card-zoom circular" id="${this._name}">
          <div class="row row-card"> 
              ${ribbon}
             <div class="col-4 col-sm-12">
-                <div class="card-img-top div-img circular-top" id="${this._name}"
+                <div class="card-img-top div-img circular-top" 
                 style='background: url("${this._img.toString()}")'></div>
             </div>
             <div class="col-6 col-sm-12 row-card px-0">
                 <div class="card-body row-card pr-0 py-sm-3 px-sm-4">
                     <h5 class="card-title"><b>${this._name}</b> ${this._model}</h5>
-                    <p class="card-text m-0">Precio: <b>${precio + cup}</b>
-<!--                    <br>${this._description}-->
+                    <p class="card-text m-0 prod-price">Precio: <b>${precio + cup}</b>
                     </p>
                     <p class="card-text p-stock m-0">
                        Cantidad: ${cant}
@@ -93,7 +92,7 @@ class Product {
                      <button name="${this._name}" 
                             class="btn prod-id bg-gradient-orange text-white circular btn-sm float-right d-sm-inline-block d-none">
                         <i class="mdi mdi-cart-plus"></i>
-                        <div class="d-inline-block">Añadir al carrito</div>
+                        <div class="d-inline-block">Añadir</div>
                      </button>
                 </div>
             </div>

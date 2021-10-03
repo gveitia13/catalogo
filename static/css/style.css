@@ -126,7 +126,7 @@ body {
     height: 165px;
     background-size: cover !important;
     border-radius: 15px 15px 0 0;
-    border-top: 5px solid transparent;
+    /*border-top: 5px solid transparent;*/
     cursor: pointer;
 }
 
@@ -179,7 +179,7 @@ body {
         height: 150px;
     }
 
-    .div-img {
+    div.div-img {
         border-bottom-left-radius: 1.5rem;
         border-top-right-radius: 0 !important;
     }
@@ -188,7 +188,7 @@ body {
         width: 40px;
     }
 
-    p.prod-desc, h5.card-title {
+    p.prod-desc, h5.card-title, p.prod-price {
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
@@ -199,7 +199,7 @@ body {
     }
 }
 
-h5.card-title {
+h5.card-title,p.prod-price {
     -webkit-line-clamp: 1;
 }
 
@@ -403,4 +403,7 @@ input[type='search'] {
 
 .btn-close-white {
     filter: invert(1) grayscale(100%) brightness(200%);
+}
+div.prod-card{
+    cursor: pointer;
 }
