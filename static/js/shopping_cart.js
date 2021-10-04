@@ -182,8 +182,8 @@ let
   }
   ,
   generateMSG = () => {
-    let table = 'https://gveitia13.github.io/catalgo/ %0A'
-    Cart.items.prods.forEach(e => table += `${e.name} (${e.cup}) * ${e.cant}%0A`)
+    let table = ''
+    Cart.items.prods.forEach(e => table += `${e.name} (${e.cup} cup) * ${e.cant}%0A`)
     table += `%0ATotal: ${d.querySelector('span.cart-total').innerText}%0A%0A`
 
     let dataClient = 'Name: ' + d.querySelector('.form-cart-name').value + '%0A'
@@ -191,7 +191,7 @@ let
       dataClient += `Note: ${d.querySelector('.form-cart-note').value}%0A`
 
     if (d.querySelector('button.home').classList.contains('active')) {
-      let str = 'Hola, me gustaría comprar los siguientes productos y que me los traigan a la dirección: %0A'
+      let str = 'https://gveitia13.github.io/catalgo/ %0A Hola, me gustaría comprar los siguientes productos y que me los traigan a la dirección: %0A'
         + d.querySelector('.form-cart-addr').value + '%0A%0A'
       str += table
       str += dataClient

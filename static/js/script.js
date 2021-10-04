@@ -343,30 +343,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
         icon_lg.classList.remove('d-none')
       }
     })
-  /*
-  // Modal producto
-    d.querySelectorAll('div.prod-card').forEach(e =>
-      e.addEventListener('click', function (f) {
 
-        if (f.target.closest('button.prod-id')) return
-
-        let data = productos.find(e => e.name === this.id)
-        data['stock'] = data.stock === undefined ? 1 : data.stock
-        let precio = data.price ? `${data.price} USD ` : ``,
-          cup = data.cup ? `${data.cup} CUP` : ``
-
-        $('#prodDetails h5.name').html(`<b>${data['name']} ${data['model']}</b>`)
-        $('#prodDetails span.stock').html(` Cantidad: ${data['stock']}`)
-        $('#prodDetails p.desc').text(`${data['description']}`)
-        $('#prodDetails span.price').html(`<b>${cup}</b>`)
-        d.querySelector(
-          '#prodDetails div.imgProdDetails'
-        ).style = `background: url('${data['img']}');background-color:#333;`
-        d.querySelector('#prodDetails button.prod-id').name = this.id
-
-        $('#prodDetails').modal('show')
-      })
-    )*/
   //Imprimiendo filro de busqueda en el loby con formulario
   d.forms[0].addEventListener('submit', ev => ev.preventDefault())
 })(document)
