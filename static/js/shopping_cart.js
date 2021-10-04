@@ -35,17 +35,21 @@ $(function () {
       Alerta(`${data.name} fue añadido al carro`, 'success')
     })
   )
-  //Eventos btn home y local
-  d.querySelector('button.home')
-    .addEventListener('click', () => btnHome())
-  d.querySelector('button.local')
-    .addEventListener('click', () => btnLocal())
+
   window.addEventListener('load', () => {
+    d.querySelector('p.direccion').classList.add('d-none')
     if (d.querySelector('button.home').classList.contains('active'))
       btnHome()
     if (d.querySelector('button.local').classList.contains('active'))
       btnLocal()
   })
+
+  //Eventos btn home y local
+  d.querySelector('button.home')
+    .addEventListener('click', () => btnHome())
+  d.querySelector('button.local')
+    .addEventListener('click', () => btnLocal())
+
   $('#cart').on('hidden.bs.modal', () => {
     if (!Cart.items.prods.length) resetForm()
   })
