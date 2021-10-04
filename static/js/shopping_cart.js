@@ -285,7 +285,7 @@ let
             class: 'w-40 td-cart py-1',
             render: (data, type, row) =>
               $(window).width() <= 400
-                ? truncate(data, 8, '..') + `<br> <div class="text-xs">$${row.cup}</div>`
+                ? truncate(data, 7, '..') + `<br> <div class="text-xs">$${row.cup}</div>`
                 : $(window).width() <= 576
                   ? truncate(data, 10, '..') + `<br> <div class="text-xs">$${row.cup}</div>`
                   : truncate(data, 17, '...') + `<br> <div class="text-xs">$${row.cup}</div>`
