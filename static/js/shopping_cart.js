@@ -197,7 +197,7 @@ let
       str += dataClient
       return str
     } else {
-      let str = 'Hola me gustaría comprar los siguientes productos: %0A%0A'
+      let str = 'https://gveitia13.github.io/catalgo/ %0A Hola me gustaría comprar los siguientes productos: %0A%0A'
       str += table
       str += dataClient
       return str
