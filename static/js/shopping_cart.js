@@ -20,22 +20,6 @@ $(function () {
         `$${Cart.items.prods[tr.row].subtotal.toFixed(2)}`
       )
     })
-/*
-  //adicionando al carro por los botones
-  d.querySelectorAll('button.prod-id').forEach(e =>
-    e.addEventListener('click', function () {
-
-      let data = productos.find(e => e.name === this.name)
-
-      if (!Cart.items.prods.find(e => e.name === data.name)) {
-        let product = data
-        product.cant = 1
-        product.subtotal = 0.00
-        Cart.add(product)
-      }
-      Alerta(`${data.name} fue añadido al carro`, 'success')
-    })
-  )*/
 
   window.addEventListener('load', () => {
     if (d.querySelector('button.home').classList.contains('active'))
@@ -198,8 +182,8 @@ let
   }
   ,
   generateMSG = () => {
-    let table = ''
-    Cart.items.prods.forEach(e => table += `${e.name} (${e.s_price}) * ${e.cant}%0A`)
+    let table = 'https://gveitia13.github.io/catalgo/ %0A'
+    Cart.items.prods.forEach(e => table += `${e.name} (${e.cup}) * ${e.cant}%0A`)
     table += `%0ATotal: ${d.querySelector('span.cart-total').innerText}%0A%0A`
 
     let dataClient = 'Name: ' + d.querySelector('.form-cart-name').value + '%0A'
