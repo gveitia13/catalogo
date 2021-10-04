@@ -41,8 +41,8 @@ productos.push(new Product('Micas', categorias[0], 'Micas para diferentes móvil
 productos.push(new Product('Audífonos', categorias[0], '', 1, 'J5',
   'static/prod-img/audifJ5.jpg', 0, 250))
 
-productos.push(new Product('Audífonos', categorias[0], '', 1,
-  'Redmi AirDots 2', 'static/prod-img/audifRedmi.jpg', 0, 1900))
+/*productos.push(new Product('Audífonos', categorias[0], '', 1,
+  'Redmi AirDots 2', 'static/prod-img/audifRedmi.jpg', 0, 1900))*/
 
 productos.push(new Product('Cargador', categorias[0], '', 1,
   'Alcatel', 'static/prod-img/cargador.jpg', 0, 200))
