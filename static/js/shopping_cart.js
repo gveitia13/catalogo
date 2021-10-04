@@ -38,7 +38,11 @@ $(function () {
   )
 
   window.addEventListener('load', () => {
-    d.querySelector('p.direccion').classList.add('d-none')
+    if (d.querySelector('button.home').classList.contains('active'))
+      d.querySelector('p.direccion').classList.add('d-none')
+    if (d.querySelector('button.local').classList.contains('active'))
+      d.querySelector('p.horario').classList.add('d-none')
+
     if (d.querySelector('button.home').classList.contains('active'))
       btnHome()
     if (d.querySelector('button.local').classList.contains('active'))
@@ -281,8 +285,8 @@ let
             class: 'w-40 td-cart py-1',
             render: (data, type, row) =>
               $(window).width() <= 576
-                ? truncate(data, 9, '..') + `<br> <div class="text-xs">$${row.cup}</div>`
-                : truncate(data, 17, '...') + `<br> <div class="text-xs">$${row.cup}</div>`
+                ? data + `<br> <div class="text-xs">$${row.cup}</div>`
+                : data + `<br> <div class="text-xs">$${row.cup}</div>`
           }
         ],
         rowCallback (row, data, displayNum, displayIndex, dataIndex) {

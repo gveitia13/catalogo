@@ -8,7 +8,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
         let a = d.createElement('a')
         a.rel = 'cate'
         a.style.cursor = 'pointer'
-        a.classList.add('nav-link', 'cate')
+        a.classList.add('nav-link', 'cate', 'd-none')
         let i = d.createElement('i')
         i.classList.add('nav-icon', 'text-white', 'tema')
         e.icon.forEach(icon => i.classList.add(icon))
@@ -204,8 +204,6 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
   window.addEventListener('load', () =>
     temaDefault(d), printProducts(d, productos, true, categorias),
   )
-  console.log(productos)
-  // console.log(productos)
 
   d.querySelectorAll('a[rel=modal]').forEach(e =>
     e.addEventListener('click', () => $('#links1').modal('show')))
@@ -267,6 +265,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
 
   //Evento click en Ver todos plp
   d.querySelector('a[rel="todos"]').addEventListener('click', () => {
+    return
     document.querySelector('#container').style.display = 'none'
     d.querySelectorAll('a[rel="cate"]').forEach(e => e.classList.remove('active'))
     d.querySelectorAll('a[rel="fcate"]').forEach(e => e.classList.remove('bg-gradient-dark'))
