@@ -284,9 +284,11 @@ let
             targets: [0],
             class: 'w-40 td-cart py-1',
             render: (data, type, row) =>
-              $(window).width() <= 576
-                ? data + `<br> <div class="text-xs">$${row.cup}</div>`
-                : data + `<br> <div class="text-xs">$${row.cup}</div>`
+              $(window).width() <= 400
+                ? truncate(data, 8, '..') + `<br> <div class="text-xs">$${row.cup}</div>`
+                : $(window).width() <= 576
+                  ? truncate(data, 10, '..') + `<br> <div class="text-xs">$${row.cup}</div>`
+                  : truncate(data, 17, '...') + `<br> <div class="text-xs">$${row.cup}</div>`
           }
         ],
         rowCallback (row, data, displayNum, displayIndex, dataIndex) {

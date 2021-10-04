@@ -202,7 +202,6 @@ body {
 }
 
 
-
 @media only screen and (min-width: 575px) {
     .bootstrap-touchspin {
         width: 75% !important;
@@ -214,14 +213,12 @@ h5.card-title, p.prod-price {
     -webkit-line-clamp: 1;
 }
 
-p.prod-desc, h5.card-title, td.w-40 {
+p.prod-desc, h5.card-title{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-td.w-40 {
-    -webkit-line-clamp: 1;
-}
+
 p.prod-desc {
     -webkit-line-clamp: 2;
 }
