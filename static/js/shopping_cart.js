@@ -20,7 +20,7 @@ $(function () {
         `$${Cart.items.prods[tr.row].subtotal.toFixed(2)}`
       )
     })
-
+/*
   //adicionando al carro por los botones
   d.querySelectorAll('button.prod-id').forEach(e =>
     e.addEventListener('click', function () {
@@ -35,7 +35,7 @@ $(function () {
       }
       Alerta(`${data.name} fue añadido al carro`, 'success')
     })
-  )
+  )*/
 
   window.addEventListener('load', () => {
     if (d.querySelector('button.home').classList.contains('active'))

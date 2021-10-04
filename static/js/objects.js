@@ -102,7 +102,8 @@ class Product {
                         ${this._description}
                     </p>
                      <button name="${this._name}" 
-                            class="btn prod-id bg-gradient-orange text-white circular btn-sm float-right d-sm-inline-block d-none">
+                            class="btn prod-id bg-gradient-orange text-white circular
+                             float-right d-sm-inline-block d-none">
                         <i class="mdi mdi-cart-plus"></i>
                         <div class="d-inline-block">Añadir</div>
                      </button>

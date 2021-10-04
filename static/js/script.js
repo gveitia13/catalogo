@@ -8,7 +8,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
         let a = d.createElement('a')
         a.rel = 'cate'
         a.style.cursor = 'pointer'
-        a.classList.add('nav-link', 'cate', 'd-none')
+        a.classList.add('nav-link', 'cate',)
         let i = d.createElement('i')
         i.classList.add('nav-icon', 'text-white', 'tema')
         e.icon.forEach(icon => i.classList.add(icon))
@@ -93,6 +93,47 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
       container.appendChild(div1)
 
       pro.forEach(g => div2.innerHTML += g.card())
+
+      /*ESTO VA AKI PA Q COJA EVENTO CUANDO REEIMPRIME EL BODY*/
+      // Modal producto
+      d.querySelectorAll('div.prod-card').forEach(e =>
+        e.addEventListener('click', function (f) {
+
+          if (f.target.closest('button.prod-id')) return
+
+          let data = productos.find(e => e.name === this.id)
+          data['stock'] = data.stock === undefined ? 1 : data.stock
+          let precio = data.price ? `${data.price} USD ` : ``,
+            cup = data.cup ? `${data.cup} CUP` : ``
+
+          $('#prodDetails h5.name').html(`<b>${data['name']} ${data['model']}</b>`)
+          $('#prodDetails span.stock').html(` Cantidad: ${data['stock']}`)
+          $('#prodDetails p.desc').text(`${data['description']}`)
+          $('#prodDetails span.price').html(`<b>${cup}</b>`)
+          d.querySelector(
+            '#prodDetails div.imgProdDetails'
+          ).style = `background: url('${data['img']}');background-color:#333;`
+          d.querySelector('#prodDetails button.prod-id').name = this.id
+
+          $('#prodDetails').modal('show')
+        })
+      )
+
+      //adicionando al carro por los botones
+      d.querySelectorAll('button.prod-id').forEach(e =>
+        e.addEventListener('click', function () {
+
+          let data = productos.find(e => e.name === this.name)
+
+          if (!Cart.items.prods.find(e => e.name === data.name)) {
+            let product = data
+            product.cant = 1
+            product.subtotal = 0.00
+            Cart.add(product)
+          }
+          Alerta(`${data.name} fue añadido al carro`, 'success')
+        })
+      )
     }),
   temaDefault = d => {
     let div = d.createElement('div')
@@ -265,7 +306,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
 
   //Evento click en Ver todos plp
   d.querySelector('a[rel="todos"]').addEventListener('click', () => {
-    return
+    // return
     document.querySelector('#container').style.display = 'none'
     d.querySelectorAll('a[rel="cate"]').forEach(e => e.classList.remove('active'))
     d.querySelectorAll('a[rel="fcate"]').forEach(e => e.classList.remove('bg-gradient-dark'))
@@ -302,30 +343,30 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
         icon_lg.classList.remove('d-none')
       }
     })
+  /*
+  // Modal producto
+    d.querySelectorAll('div.prod-card').forEach(e =>
+      e.addEventListener('click', function (f) {
 
-// Modal producto
-  d.querySelectorAll('div.prod-card').forEach(e =>
-    e.addEventListener('click', function (f) {
+        if (f.target.closest('button.prod-id')) return
 
-      if (f.target.closest('button.prod-id')) return
+        let data = productos.find(e => e.name === this.id)
+        data['stock'] = data.stock === undefined ? 1 : data.stock
+        let precio = data.price ? `${data.price} USD ` : ``,
+          cup = data.cup ? `${data.cup} CUP` : ``
 
-      let data = productos.find(e => e.name === this.id)
-      data['stock'] = data.stock === undefined ? 1 : data.stock
-      let precio = data.price ? `${data.price} USD ` : ``,
-        cup = data.cup ? `${data.cup} CUP` : ``
+        $('#prodDetails h5.name').html(`<b>${data['name']} ${data['model']}</b>`)
+        $('#prodDetails span.stock').html(` Cantidad: ${data['stock']}`)
+        $('#prodDetails p.desc').text(`${data['description']}`)
+        $('#prodDetails span.price').html(`<b>${cup}</b>`)
+        d.querySelector(
+          '#prodDetails div.imgProdDetails'
+        ).style = `background: url('${data['img']}');background-color:#333;`
+        d.querySelector('#prodDetails button.prod-id').name = this.id
 
-      $('#prodDetails h5.name').html(`<b>${data['name']} ${data['model']}</b>`)
-      $('#prodDetails span.stock').html(` Cantidad: ${data['stock']}`)
-      $('#prodDetails p.desc').text(`${data['description']}`)
-      $('#prodDetails span.price').html(`<b>${cup}</b>`)
-      d.querySelector(
-        '#prodDetails div.imgProdDetails'
-      ).style = `background: url('${data['img']}');background-color:#333;`
-      d.querySelector('#prodDetails button.prod-id').name = this.id
-
-      $('#prodDetails').modal('show')
-    })
-  )
+        $('#prodDetails').modal('show')
+      })
+    )*/
   //Imprimiendo filro de busqueda en el loby con formulario
   d.forms[0].addEventListener('submit', ev => ev.preventDefault())
 })(document)
