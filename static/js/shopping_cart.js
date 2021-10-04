@@ -1,7 +1,8 @@
 $(function () {
-  d.querySelector('a[rel="cart"]').addEventListener('click', () => {
-    $('#cart').modal('show')
-  })
+  d.querySelectorAll('a[rel="cart"]').forEach(e =>
+    e.addEventListener('click', () => {
+      $('#cart').modal('show')
+    }))
 
 //Eliminar de la tabla del carrito y evento cantidad
   $('#prods-cart tbody')
