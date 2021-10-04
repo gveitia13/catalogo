@@ -423,7 +423,9 @@
 <script src="static/js/shopping_cart.js"></script>
 <script src="static/js/script.js"></script>
 <script>
-  // setTimeout(()=>document.querySelector('body').addEventListener('load', () => alert('ya chama')))
+  $(function () {
+    setTimeout(() => $('a.inicio').click())
+  })
 </script>
 </body>
 </html>
