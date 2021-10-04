@@ -9,7 +9,7 @@ productos.push(new Product('Cable de red', categorias[1],
   '19 metros, Categoria 6 (Nuevo)',
   1, '', 'static/prod-img/cable.jpg', 0, 600))
 
-productos.push(new Product('Targeta Gráfica', categorias[1],
+productos.push(new Product('Targeta Gráfica ATI', categorias[1],
   'ATI Raedeon HD 5450 1GB, DDR3, PCIe, HDMI, DVI-I, VGA\nMáxima resolucion de pantalla 2560 x 1600' +
   '\nVelocidad: 1600 MHz, Marca Chipset AMD',
   1, '', 'static/prod-img/targeta grafica.jpg', 0, 2600))
@@ -81,21 +81,21 @@ productos.push(new Product('Speaker Bluetooth', categorias[2],
   'Bocinas por Bluetooth', 1, '', ['static/prod-img/bocina.jpg'], 60, 3500))
 
 productos.push(new Product('Fuente EVGA', categorias[1],
-  'EVGA 80+ Bronce 600W', 1, '', ['static/prod-img/fuente.jpg'], 125,))
+  'EVGA 80+ Bronce 600W', 1, '', ['static/prod-img/fuente.jpg'], 125, 8750))
 
 productos.push(new Product('HDD Externo', categorias[1],
-  '8 TB', 1, '', ['static/prod-img/HDD.jpg'], 345,))
+  '8 TB', 1, '', ['static/prod-img/HDD.jpg'], 345, 24150))
 
 productos.push(new Product('Panel Frontal USB', categorias[1],
-  '2 puertos USB 3.0 + 2 puertos USB 2.0', 1, '', ['static/prod-img/USB.jpg'], 35,))
+  '2 puertos USB 3.0 + 2 puertos USB 2.0', 1, '', ['static/prod-img/USB.jpg'], 35, 2000,))
 
 productos.push(new Product('Cadena de plata', categorias[2],
   'Plata 925, peso 103 gramos, las letras son de oro\nPreguntar por el precio',
-  1, '925', ['static/prod-img/cadena.jpg'], 0, 0, 1))
+  1, '925', ['static/prod-img/cadena.jpg'], 0, 8000, 1))
 
 productos.push(new Product('Moto', categorias[0],
   'De poco uso, tiene un detalle en la esquina superior izquierda. Compatible con 2G y 3G',
-  1, 'E4', ['static/prod-img/moto.jpg'], 0, 0, 1))
+  5, 'E4', ['static/prod-img/moto.jpg'], 0, 6000, 1))
 
 productos.push(new Product('Xiaomi', categorias[0],
   'Nuevo 2G / 3G / 4G',

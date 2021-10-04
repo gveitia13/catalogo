@@ -1,4 +1,15 @@
 class Product {
+  get stock () {
+    return this._stock
+  }
+
+  set stock (value) {
+    this._stock = value
+  }
+  set cant (value) {
+    this._cant = value
+  }
+
   set pioridad (value) {
     this._pioridad = value
   }
@@ -39,22 +50,23 @@ class Product {
     return this._cup
   }
 
-  constructor (name, category, description, cant, model,
+  constructor (name, category, description, stock, model,
     img = ['static/img/empty.png'], price = 0, cup = 0, pioridad = 100) {
     this._name = name
     this._category = category
     this._price = price
     this._description = description
     this._img = img
-    this._cant = cant
+    this._stock = stock
     this._model = model
     this._pioridad = pioridad
     this._cup = cup
   }
 
   card () {
-    let precio = this._price ? `${this._price} USD ` : ``,
-      cup = this._cup ? `${this._cup} CUP` : ``
+    // let precio = this._price ? `${this._price} USD ` : ``,
+    //   cup = this._cup ? `${this._cup} CUP` : ``
+    let precio = this._cup + ' CUP'
 
     let ribbon = this._pioridad < 100 ?
         `<div class="ribbon-wrapper">
@@ -66,7 +78,7 @@ class Product {
         ? 'bg-navy' : 'bg-light',
       hover = localStorage.getItem('tema') === 'Modo claro'
         ? 'w3-hover-shadow-light' : 'w3-hover-shadow',
-      cant = this._cant === undefined ? 3 : this._cant
+      cant = this._stock === undefined ? 3 : this._stock
 
     return `
 <div class="col-12 col-sm-6 col-md-4  col-lg-3 py-lg-3 px-lg-2 px-0 py-2 div-card">
@@ -81,7 +93,7 @@ class Product {
             <div class="col-6 col-sm-12 row-card px-0">
                 <div class="card-body row-card pr-0 py-sm-3 px-sm-4">
                     <h5 class="card-title"><b>${this._name}</b> ${this._model}</h5>
-                    <p class="card-text m-0 prod-price">Precio: <b>${precio + cup}</b>
+                    <p class="card-text m-0 prod-price">Precio: <b>${precio}</b>
                     </p>
                     <p class="card-text p-stock m-0">
                        Cantidad: ${cant}

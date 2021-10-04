@@ -194,12 +194,19 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
       icon: icon,
       title: text
     })
-  }
+  },
+  truncate = (str, len, end = '..') =>
+    str.replace(new RegExp('(.{' + len + '}).*'), '$1' + end + '')
+
 ;
 ((d) => {
+
   window.addEventListener('load', () =>
     temaDefault(d), printProducts(d, productos, true, categorias),
   )
+  console.log(productos)
+  // console.log(productos)
+
   d.querySelectorAll('a[rel=modal]').forEach(e =>
     e.addEventListener('click', () => $('#links1').modal('show')))
 
@@ -280,11 +287,6 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
     setTimeout(() => document.getElementById('container').style.display = 'block')
   })
 
-  //Intentando hacer zoom de la img card
-  d.querySelectorAll('.div-img').forEach(m =>
-    m.addEventListener('click', function (e) {
-
-    }))
   // Controlando el logo de la pagina
   document
     .querySelector('a[data-widget="pushmenu"]')
@@ -302,29 +304,21 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
       }
     })
 
-  //adicionando al carro por los botones
-  d.querySelectorAll('button.prod-id').forEach(e =>
-    e.addEventListener('click', function () {
-
-    }))
-
-  d.querySelectorAll('.prod-card').forEach(e =>
+// Modal producto
+  d.querySelectorAll('div.prod-card').forEach(e =>
     e.addEventListener('click', function (f) {
-      if (f.target.closest('button.prod-id')) {
-        let btn = f.target.closest('button.prod-id'),
-          data = productos.find(e => e.name === btn.name)
-        Alerta(`${data.name} añadido al carrito`, 'success')
-        return
-      }
+
+      if (f.target.closest('button.prod-id')) return
+
       let data = productos.find(e => e.name === this.id)
-      data['cant'] = this.cant === undefined ? 1 : this.cant
+      data['stock'] = data.stock === undefined ? 1 : data.stock
       let precio = data.price ? `${data.price} USD ` : ``,
         cup = data.cup ? `${data.cup} CUP` : ``
 
       $('#prodDetails h5.name').html(`<b>${data['name']} ${data['model']}</b>`)
-      $('#prodDetails span.stock').html(` Cantidad: ${data['cant']}`)
+      $('#prodDetails span.stock').html(` Cantidad: ${data['stock']}`)
       $('#prodDetails p.desc').text(`${data['description']}`)
-      $('#prodDetails span.price').html(`<b>${precio + cup}</b>`)
+      $('#prodDetails span.price').html(`<b>${cup}</b>`)
       d.querySelector(
         '#prodDetails div.imgProdDetails'
       ).style = `background: url('${data['img']}');background-color:#333;`
