@@ -23,6 +23,7 @@
     <!--     AdminLTE App -->
     <script src="admin-lte3.10/js/adminlte.min.js"></script>
     <!-- DataTable -->
+    <link rel="stylesheet" href="datatables-1.10.20/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet"
           href="datatables-1.10.20/plugins/responsive-2.2.3/css/responsive.bootstrap.min.css">
     <script src="datatables-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -114,6 +115,14 @@
                             <i class="nav-icon mdi mdi-settings text-white tema"></i>
                             <p>
                                 Servicios
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a rel="ver-lista" class="nav-link" style="cursor: pointer">
+                            <i class="nav-icon mdi mdi-view-list text-white tema"></i>
+                            <p>
+                                See list
                             </p>
                         </a>
                     </li>
@@ -406,6 +415,40 @@
                                     Enviar a WhatsApp
                                 </button>
                             </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal List Products -->
+    <div class="modal fade" id="lista" tabindex="-1" aria-labelledby="modelTitleId" role="dialog"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-top" role="document">
+            <div class="modal-content circular">
+                <div class="modal-header border-bottom-0 py-2">
+                    <img src="static/img/logo-lg-red-black.png"
+                         alt="TechnoSTAR Logo"
+                         style="margin-left: .4rem;" width="120" height="50">
+                    <button type="button" class="btn-close mt-2" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="modal-body px-0 px-sm-2 px-lg-3 pt-0">
+                    <div class="cart">
+                        <div class="table-responsive m-0">
+                            <table id="listProds" class="float-right table table-hover">
+                                <thead style="display: none">
+                                <tr>
+                                    <th scope="col" style="width: 35%;cursor: pointer">Name</th>
+                                    <th scope="col" style="width: 55%;">Desc</th>
+                                    <th scope="col" style="width: 10%;">Options</th>
+                                </tr>
+                                </thead>
+                                <tbody id="listProdsBody">
+
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

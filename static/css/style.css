@@ -1,5 +1,4 @@
-a[rel="cate"], a[rel="fcate"], a[rel="servicios"],
-a[rel="tema"], h4, a[rel="todos"], a[rel="cart"] {
+aside * {
     user-select: none;
 }
 
@@ -176,6 +175,10 @@ body {
 }
 
 @media only screen and (max-width: 575px) {
+    * {
+        user-select: none;
+    }
+
     .div-img, .row-card {
         height: 150px;
     }
@@ -195,9 +198,12 @@ body {
         overflow: hidden;
     }
 
-
     p.prod-desc {
         -webkit-line-clamp: 2;
+    }
+
+    * {
+        user-select: none;
     }
 }
 
@@ -213,7 +219,7 @@ h5.card-title, p.prod-price {
     -webkit-line-clamp: 1;
 }
 
-p.prod-desc, h5.card-title{
+p.prod-desc, h5.card-title {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -333,11 +339,21 @@ a.brand-link img {
     margin-left: .5rem;
 }
 
-li > a[rel="tema"], li > a[rel="cart"] {
+li > a[rel="tema"], li > a[rel="cart"], li > a[rel="ver-lista"], li > a[rel="servicios"] {
     background-color: initial !important;
 }
 
-.circular {
+table.dataTable {
+    border-spacing: 0;
+}
+
+input[aria-controls="listProds"] {
+    margin-left: 0.5em;
+    display: inline-block;
+    width: auto
+}
+
+.circular, input[aria-controls="listProds"] {
     border-radius: 1.5rem !important;
 }
 
@@ -494,12 +510,16 @@ div.prod-card {
     color: #dc3545;
 }
 
-w-40 {
+.w-40 {
     width: 40% !important;
 }
 
 .w-15 {
     width: 15% !important;
+}
+
+.w-55 {
+    width: 55% !important;
 }
 
 .w-20 {

@@ -1,5 +1,5 @@
 const ul_sidebar = document.querySelector('#ul-sidebar')
-let printProducts = async (d, productos, side = true, categorias = categorias) =>
+let printProducts = async (d, p_productos, side = true, categorias = categorias) =>
     categorias.forEach(e => {
       if (side) {
         //Modificando el sidebar
@@ -54,7 +54,7 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
           d.querySelector('a[rel="ftodos"]').classList.remove('bg-gradient-dark')
           let categoria = categorias.filter(g => g.name === p.innerText)
           d.querySelector('#container').innerHTML = ''
-          printProducts(d, productos, false, categoria)
+          printProducts(d, p_productos, false, categoria)
           document.getElementById('container').style.display = 'block'
         })
 
@@ -71,12 +71,12 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
           d.querySelector('a[rel="todos"]').classList.remove('active')
           let categoria = categorias.find(g => g.name === fspan.innerText)
           d.querySelector('#container').innerHTML = ''
-          printProducts(d, productos, false, [categoria])
+          printProducts(d, p_productos, false, [categoria])
           document.getElementById('container').style.display = 'block'
         })
       }
       //Creando cards con el body
-      let pro = productos.filter(f => f.category.name === e.name)
+      let pro = p_productos.filter(f => f.category.name === e.name)
       if (!pro) return
 
       pro.sort((a, b) => a.pioridad - b.pioridad)
@@ -100,38 +100,40 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
         e.addEventListener('click', function (f) {
 
           if (f.target.closest('button.prod-id')) return
-
           let data = productos.find(e => e.name === this.id)
-          data['stock'] = data.stock === undefined ? 1 : data.stock
-          let precio = data.price ? `${data.price} USD ` : ``,
-            cup = data.cup ? `${data.cup} CUP` : ``
+          if (data !== undefined) {
+            data['stock'] = data.stock === undefined ? 1 : data.stock
+            let precio = data.price ? `${data.price} USD ` : ``,
+              cup = data.cup ? `${data.cup} CUP` : ``
 
-          $('#prodDetails h5.name').html(`<b>${data['name']} ${data['model']}</b>`)
-          $('#prodDetails span.stock').html(` Cantidad: ${data['stock']}`)
-          $('#prodDetails p.desc').text(`${data['description']}`)
-          $('#prodDetails span.price').html(`<b>${cup}</b>`)
-          d.querySelector(
-            '#prodDetails div.imgProdDetails'
-          ).style = `background: url('${data['img']}');background-color:#333;`
-          d.querySelector('#prodDetails button.prod-id').name = this.id
+            $('#prodDetails h5.name').html(`<b>${data['name']} ${data['model']}</b>`)
+            $('#prodDetails span.stock').html(` Cantidad: ${data['stock']}`)
+            $('#prodDetails p.desc').text(`${data['description']}`)
+            $('#prodDetails span.price').html(`<b>${cup}</b>`)
+            d.querySelector(
+              '#prodDetails div.imgProdDetails'
+            ).style = `background: url('${data['img']}');background-color:#333;`
+            d.querySelector('#prodDetails button.prod-id').name = this.id
 
-          $('#prodDetails').modal('show')
+            $('#prodDetails').modal('show')
+          }
         })
       )
 
       //adicionando al carro por los botones
       d.querySelectorAll('button.prod-id').forEach(e =>
         e.addEventListener('click', function () {
-
           let data = productos.find(e => e.name === this.name)
-
-          if (!Cart.items.prods.find(e => e.name === data.name)) {
-            let product = data
-            product.cant = 1
-            product.subtotal = 0.00
-            Cart.add(product)
-          }
-          Alerta(`${data.name} fue añadido al carro`, 'success')
+          if (data !== undefined)
+            if (!Cart.items.prods.find(e => e.name === data.name)) {
+              let product = data
+              product.cant = 1
+              product.subtotal = 0.00
+              Cart.add(product)
+              Cart.items.prodsList.splice(Cart.items.prodsList
+                .findIndex(e => e.name === product.name), 1)
+            }
+          Alerta(`${this.name} fue añadido al carro`, 'success')
         })
       )
     }),
@@ -236,11 +238,12 @@ let printProducts = async (d, productos, side = true, categorias = categorias) =
       title: text
     })
   },
-  truncate = (str, len, end = '..') =>
-    str.replace(new RegExp('(.{' + len + '}).*'), '$1' + end + '')
-
+  truncate = (str, len, end = '..') => str === undefined
+    ? '' : str.replace(new RegExp('(.{' + len + '}).*'), '$1' + end + '')
 ;
 ((d) => {
+  Cart.list()
+  Cart.items.prodsList = productos.map(e => e)
 
   window.addEventListener('load', () =>
     temaDefault(d), printProducts(d, productos, true, categorias),
