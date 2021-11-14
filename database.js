@@ -1,11 +1,13 @@
 productos = []
 categorias = []
-categorias.push(new Category('Celulares & Accesorios', 'uuuuu', ['mdi', 'mdi-cellphone-android']))
-categorias.push(new Category('PCs & Accesorios', 'uuuuu', ['mdi', 'mdi-desktop-classic']))
+// categorias.push(new Category('Celulares & Accesorios', 'uuuuu', ['mdi', 'mdi-cellphone-android']))
+// categorias.push(new Category('PCs & Accesorios', 'uuuuu', ['mdi', 'mdi-desktop-classic']))
 categorias.push(new Category('Artículos variados', 'uuuuu', ['mdi', 'mdi-package-variant-closed']))
+categorias.push(new Category('Cigarros','cancer y eso',['mdi', 'mdi-smoking']))
+categorias.push(new Category('Bebidas','explote',['mdi', 'mdi-food-fork-drink']))
 
 //Oficiales
-productos.push(new Product('Cable de red', categorias[1],
+/*productos.push(new Product('Cable de red', categorias[1],
   '19 metros, Categoria 6 (Nuevo)',
   1, '', 'static/prod-img/cable.jpg', 0, 600))
 
@@ -41,8 +43,8 @@ productos.push(new Product('Micas', categorias[0], 'Micas para diferentes móvil
 productos.push(new Product('Audífonos', categorias[0], '', 1, 'J5',
   'static/prod-img/audifJ5.jpg', 0, 250))
 
-/*productos.push(new Product('Audífonos', categorias[0], '', 1,
-  'Redmi AirDots 2', 'static/prod-img/audifRedmi.jpg', 0, 1900))*/
+/!*productos.push(new Product('Audífonos', categorias[0], '', 1,
+  'Redmi AirDots 2', 'static/prod-img/audifRedmi.jpg', 0, 1900))*!/
 
 productos.push(new Product('Cargador', categorias[0], '', 1,
   'Alcatel', 'static/prod-img/cargador.jpg', 0, 200))
@@ -99,9 +101,18 @@ productos.push(new Product('Moto', categorias[0],
 
 productos.push(new Product('Xiaomi', categorias[0],
   'Nuevo 2G / 3G / 4G',
-  10, 'Redmi 9C', ['static/prod-img/9C.jpg'], 300, 19500, 1))
+  10, 'Redmi 9C', ['static/prod-img/9C.jpg'], 300, 19500, 1))*/
 
 // productos.push(new Product('TEST', categorias[0],
 //   'Nuevo 2G / 3G / 4G',
 //   1, 'Redmi 9C', ['static/prod-img/9C.jpg', 'static/prod-img/moto.jpg', 'static/prod-img/cadena.jpg'],
 //   300, 19500, 1))
+
+// Cosas UCI
+productos.push(new Product('Cigarro ORIS',categorias[1],
+  'El cigarro suelto a 15',40,'Menta',
+  ['static/prod-img/oris.jpg'],0,250,))
+
+productos.push(new Product('Pomo de Ron',categorias[2],
+  'Ron añejo especial original, a granel, se vende por botellas también a 400',22,'',
+  ['static/prod-img/pomo.jpg'],0,800))
