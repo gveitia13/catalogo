@@ -275,13 +275,13 @@ let
       dataClient += `Note: ${d.querySelector('.form-cart-note').value}%0A`
 
     if (d.querySelector('button.home').classList.contains('active')) {
-      let str = 'https://gveitia13.github.io/catalgo/ %0A Hola, me gustaría comprar los siguientes productos y que me los traigan a la dirección: %0A'
+      let str = 'https://technostarcuba.github.io/catalgo/ %0A Hola, me gustaría comprar los siguientes productos y que me los traigan a la dirección: %0A'
         + d.querySelector('.form-cart-addr').value + '%0A%0A'
       str += table
       str += dataClient
       return str
     } else {
-      let str = 'https://gveitia13.github.io/catalgo/ %0A Hola me gustaría comprar los siguientes productos: %0A%0A'
+      let str = 'https://technostarcuba.github.io/catalgo/ %0A Hola me gustaría comprar los siguientes productos: %0A%0A'
       str += table
       str += dataClient
       return str
