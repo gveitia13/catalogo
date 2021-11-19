@@ -241,7 +241,7 @@ let
       checkIsValidClass(`${selector1}`)) {
       Alerta('Complete el formulario, please', 'error')
     } else {
-      window.open(`https://api.whatsapp.com/send/?phone=+5358496023&text=${generateMSG()}&app_absent=1`)
+      window.open(`https://api.whatsapp.com/send/?phone=+13203857293&text=${generateMSG()}&app_absent=1`)
       console.log(generateMSG())
       $('#cart').modal('hide')
       Cart.items.prodsList = Cart.items.prodsList.concat(Cart.items.prods)
@@ -255,7 +255,7 @@ let
     if (checkIsValidClass(`${selector}`)) {
       Alerta('Complete el formulario, please', 'error')
     } else {
-      window.open(`https://api.whatsapp.com/send/?phone=+5358496023&text=${generateMSG()}&app_absent=1`)
+      window.open(`https://api.whatsapp.com/send/?phone=+13203857293&text=${generateMSG()}&app_absent=1`)
       console.log(generateMSG())
       $('#cart').modal('hide')
       Cart.items.prodsList = Cart.items.prodsList.concat(Cart.items.prods)
