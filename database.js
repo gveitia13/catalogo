@@ -3,8 +3,8 @@ categorias = []
 // categorias.push(new Category('Celulares & Accesorios', 'uuuuu', ['mdi', 'mdi-cellphone-android']))
 // categorias.push(new Category('PCs & Accesorios', 'uuuuu', ['mdi', 'mdi-desktop-classic']))
 categorias.push(new Category('Artículos variados', 'uuuuu', ['mdi', 'mdi-package-variant-closed']))
-categorias.push(new Category('Cigarros','cancer y eso',['mdi', 'mdi-smoking']))
-categorias.push(new Category('Bebidas','explote',['mdi', 'mdi-food-fork-drink']))
+categorias.push(new Category('Cigarros', 'cancer y eso', ['mdi', 'mdi-smoking']))
+categorias.push(new Category('Bebidas', 'explote', ['mdi', 'mdi-food-fork-drink']))
 
 //Oficiales
 /*productos.push(new Product('Cable de red', categorias[1],
@@ -109,11 +109,23 @@ productos.push(new Product('Xiaomi', categorias[0],
 //   300, 19500, 1))
 
 // Cosas UCI
-productos.push(new Product('Cigarro ORIS',categorias[1],
-  'El cigarro suelto a 15',40,'Menta',
-  ['static/prod-img/oris.jpg'],0,250,))
+productos.push(new Product('Cigarro ORIS', categorias[1],
+  'El cigarro suelto a 15', 40, 'Menta',
+  ['static/prod-img/oris.jpg'], 0, 250,))
 
 
-productos.push(new Product('Pomo de Ron',categorias[2],
-  'Ron añejo especial original, a granel, se vende por botellas también a 400',22,'',
-  ['static/prod-img/pomo.jpg'],0,800))
+productos.push(new Product('Pomo de Ron', categorias[2],
+  'Ron añejo original, a granel, se vende por botellas también a 400', 22, '',
+  ['static/prod-img/pomo.jpg'], 0, 800))
+
+productos.push(new Product('Botella de Ron', categorias[2],
+  'Ron añejo original, a granel, 700 ML', 22, '',
+  ['static/prod-img/botella.jpg'], 0, 400))
+
+productos.push(new Product('H-Upmann sin filtro', categorias[1],
+  'Sin entrega a domicilio', 7, '',
+  ['static/prod-img/h-hupmann-sin-filtro.jpg'], 0, 120))
+
+productos.push(new Product('H-Upmann selecto', categorias[1],
+  'Sin entrega a domicilio', 7, '',
+  ['static/prod-img/h-upmann selecto.jpg'], 0, 140))
