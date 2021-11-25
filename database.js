@@ -114,13 +114,13 @@ productos.push(new Product('Cigarro ORIS', categorias[1],
   ['static/prod-img/oris.jpg'], 0, 250, 1))
 
 
-// productos.push(new Product('Pomo de Ron', categorias[2],
-//   'Ron añejo original, a granel, se vende por botellas también a 400', 22, '',
-//   ['static/prod-img/pomo.jpg'], 0, 800))
-//
-// productos.push(new Product('Botella de Ron', categorias[2],
-//   'Ron añejo original, a granel, 700 ML', 22, '',
-//   ['static/prod-img/botella.jpg'], 0, 400))
+productos.push(new Product('Pomo de Ron', categorias[2],
+  'Ron añejo original, a granel, se vende por botellas también a 400', 22, '',
+  ['static/prod-img/pomo.jpg'], 0, 800))
+
+productos.push(new Product('Botella de Ron', categorias[2],
+  'Ron añejo original, a granel, 700 ML', 22, '',
+  ['static/prod-img/botella.jpg'], 0, 400))
 
 // productos.push(new Product('H-Upmann sin filtro', categorias[1],
 //   'Sin entrega a domicilio', 7, '',
