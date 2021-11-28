@@ -127,7 +127,7 @@ productos.push(new Product('Botella de Ron', categorias[2],
 //   ['static/prod-img/h-hupmann-sin-filtro.jpg'], 0, 120))
 //
 productos.push(new Product('H-Upmann selecto', categorias[1],
-  'Sin entrega a domicilio', 7, '',
+  'Sin entrega a domicilio', 10, '',
   ['static/prod-img/h-upmann selecto.jpg'], 0, 130))
 
 // productos.push(new Product('Criollo', categorias[1], 'Sin entrega a domicilio',
