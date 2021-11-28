@@ -126,9 +126,9 @@ productos.push(new Product('Botella de Ron', categorias[2],
 //   'Sin entrega a domicilio', 7, '',
 //   ['static/prod-img/h-hupmann-sin-filtro.jpg'], 0, 120))
 //
-// productos.push(new Product('H-Upmann selecto', categorias[1],
-//   'Sin entrega a domicilio', 7, '',
-//   ['static/prod-img/h-upmann selecto.jpg'], 0, 140))
+productos.push(new Product('H-Upmann selecto', categorias[1],
+  'Sin entrega a domicilio', 7, '',
+  ['static/prod-img/h-upmann selecto.jpg'], 0, 130))
 
 // productos.push(new Product('Criollo', categorias[1], 'Sin entrega a domicilio',
 //   10, '', ['static/prod-img/criollos.jpeg'], 0, 100,))
@@ -138,6 +138,9 @@ productos.push(new Product('Botella de Ron', categorias[2],
 
 // productos.push(new Product('Popular Azul con filtro', categorias[1], 'Sin entrega a domicilio',
 //   5, '', ['static/prod-img/popular_azul_filtro.jpeg'], 0, 120,))
+
+productos.push(new Product('Popular verde', categorias[1], 'La caja grande de 20',
+  10, '', ['static/prod-img/verde.jpg'], 0, 130, 1))
 
 productos.push(new Product('Rothman de uva', categorias[1], 'El cigarro suelto a 2 x $15',
   29, '', ['static/prod-img/rothman_uva.jpeg'], 0, 130,))
