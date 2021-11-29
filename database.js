@@ -136,14 +136,20 @@ productos.push(new Product('H-Upmann selecto', categorias[1],
 // productos.push(new Product('Popular sin filtro', categorias[1], 'Sin entrega a domicilio',
 //   5, '', ['static/prod-img/popular_azul.jpeg'], 0, 90,))
 
-// productos.push(new Product('Popular Azul con filtro', categorias[1], 'Sin entrega a domicilio',
-//   5, '', ['static/prod-img/popular_azul_filtro.jpeg'], 0, 120,))
+productos.push(new Product('Popular Azul con filtro', categorias[1], 'Sin entrega a domicilio',
+  5, '', ['static/prod-img/popular_azul_filtro.jpeg'], 0, 120,))
 
 productos.push(new Product('Popular verde', categorias[1], 'La caja grande de 20',
   10, '', ['static/prod-img/verde.jpg'], 0, 130, 1))
 
+// productos.push(new Product('Popular azul C/filtro', categorias[1], 'Sin domicilio',
+//   20, '', ['static/prod-img/verde.jpg'], 0, 120, 1))
+
 productos.push(new Product('Rothman de uva', categorias[1], 'El cigarro suelto a 2 x $15',
   29, '', ['static/prod-img/rothman_uva.jpeg'], 0, 130,))
+
+productos.push(new Product('Rothman de menta', categorias[1], 'El cigarro suelto a 2 x $15',
+  29, '', ['static/prod-img/rothman_verde.jpg'], 0, 150,))
 
 productos.push(new Product('Condones', categorias[0], 'Sin entrega a domicilio',
   104, 'Torex', ['static/prod-img/condones.jpeg'], 0, 30,))
