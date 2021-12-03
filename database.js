@@ -113,7 +113,6 @@ productos.push(new Product('Cigarro ORIS', categorias[1],
   'El cigarro suelto a 15', 40, 'Menta',
   ['static/prod-img/oris.jpg'], 0, 250, 1))
 
-
 productos.push(new Product('Pomo de Ron', categorias[2],
   'Ron añejo original, a granel, se vende por botellas también a 400', 22, '',
   ['static/prod-img/pomo.jpg'], 0, 800))
@@ -144,14 +143,11 @@ productos.push(new Product('Criollo', categorias[1], 'El cigarro suelto 1 x $5',
 // productos.push(new Product('Popular sin filtro', categorias[1], 'Sin entrega a domicilio',
 //   5, '', ['static/prod-img/popular_azul.jpeg'], 0, 90,))
 
-productos.push(new Product('Popular Azul con filtro', categorias[1], 'Sin entrega a domicilio',
+productos.push(new Product('Popular Azul C/filtro', categorias[1], 'Sin entrega a domicilio',
   5, '', ['static/prod-img/popular_azul_filtro.jpeg'], 0, 120,))
 
 productos.push(new Product('Popular verde', categorias[1], 'La caja grande de 20',
   10, '', ['static/prod-img/verde.jpg'], 0, 120, 1))
-
-// productos.push(new Product('Popular azul C/filtro', categorias[1], 'Sin domicilio',
-//   20, '', ['static/prod-img/verde.jpg'], 0, 120, 1))
 
 productos.push(new Product('Rothman de uva', categorias[1], 'El cigarro suelto a 2 x $15',
   29, '', ['static/prod-img/rothman_uva.jpeg'], 0, 130,))
