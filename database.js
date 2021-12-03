@@ -122,6 +122,10 @@ productos.push(new Product('Botella de Ron', categorias[2],
   'Ron añejo original, a granel, 700 ML', 22, '',
   ['static/prod-img/botella.jpg'], 0, 400))
 
+productos.push(new Product('Botella de Vino', categorias[2],
+  'Vino a granel dulce, (700 ML)', 10, '',
+  ['static/prod-img/vino.jpg'], 0, 130))
+
 // productos.push(new Product('H-Upmann sin filtro', categorias[1],
 //   'Sin entrega a domicilio', 7, '',
 //   ['static/prod-img/h-hupmann-sin-filtro.jpg'], 0, 120))
@@ -130,8 +134,12 @@ productos.push(new Product('H-Upmann selecto', categorias[1],
   'Sin entrega a domicilio', 10, '',
   ['static/prod-img/h-upmann selecto.jpg'], 0, 130))
 
-// productos.push(new Product('Criollo', categorias[1], 'Sin entrega a domicilio',
-//   10, '', ['static/prod-img/criollos.jpeg'], 0, 100,))
+productos.push(new Product('H-Upmann C/filtro', categorias[1],
+  'El cigarro suelto a 2 x $15', 10, '',
+  ['static/prod-img/H_Upmann.jpg'], 0, 130))
+
+productos.push(new Product('Criollo', categorias[1], 'El cigarro suelto 1 x $5',
+  10, '', ['static/prod-img/criollos.jpeg'], 0, 100,))
 
 // productos.push(new Product('Popular sin filtro', categorias[1], 'Sin entrega a domicilio',
 //   5, '', ['static/prod-img/popular_azul.jpeg'], 0, 90,))
@@ -140,7 +148,7 @@ productos.push(new Product('Popular Azul con filtro', categorias[1], 'Sin entreg
   5, '', ['static/prod-img/popular_azul_filtro.jpeg'], 0, 120,))
 
 productos.push(new Product('Popular verde', categorias[1], 'La caja grande de 20',
-  10, '', ['static/prod-img/verde.jpg'], 0, 130, 1))
+  10, '', ['static/prod-img/verde.jpg'], 0, 120, 1))
 
 // productos.push(new Product('Popular azul C/filtro', categorias[1], 'Sin domicilio',
 //   20, '', ['static/prod-img/verde.jpg'], 0, 120, 1))
